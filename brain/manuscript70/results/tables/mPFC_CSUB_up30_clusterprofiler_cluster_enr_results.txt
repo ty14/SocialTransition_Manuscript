@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0070997	neuron death	8.84011844740049e-05	0.0222930505808882	1	Ndnf,Egln3,Epha7,Slc9a1,Ccl12,Pla2g3,Nqo1,Foxq1,Isl1
+GO:0043523	regulation of neuron apoptotic process	2.39894193465662e-05	0.0222930505808882	1	Ndnf,Egln3,Epha7,Ccl12,Pla2g3,Nqo1,Foxq1,Isl1
+GO:0051402	neuron apoptotic process	5.47078366583305e-05	0.0222930505808882	1	Ndnf,Egln3,Epha7,Ccl12,Pla2g3,Nqo1,Foxq1,Isl1
+GO:1901214	regulation of neuron death	0.00023048123557111	0.0355370642046705	1	Ndnf,Egln3,Epha7,Ccl12,Pla2g3,Nqo1,Foxq1,Isl1
+GO:0030099	myeloid cell differentiation	0.00048967911028067	0.0461774483196184	1	Prkca,Nckap1l,Pla2g3,Lilrb4a,Adgrf5,Wasf2,Runx1,Prdm16
+GO:1902105	regulation of leukocyte differentiation	0.00039973935454707	0.0415085385495629	1	Prkca,Nckap1l,Pla2g3,Lilrb4a,Runx1,Nfkbiz,Prdm16
+GO:0030900	forebrain development	0.00135562958648794	0.0739164623163563	1	Ndnf,Sox1,Pou3f4,Isl1,Sun2,Syne2,Igf2bp1
+GO:1903706	regulation of hemopoiesis	0.00143524640866626	0.0739164623163563	1	Prkca,Nckap1l,Pla2g3,Lilrb4a,Runx1,Nfkbiz,Prdm16
+GO:0002683	negative regulation of immune system process	0.00263928817723572	0.0950824118845177	1	Nckap1l,Ccl12,Lilrb4a,Adgrf5,Runx1,Prdm16,Tap1
+GO:1902107	positive regulation of leukocyte differentiation	0.0001381357313676	0.0270939908191202	1	Prkca,Nckap1l,Pla2g3,Lilrb4a,Runx1,Nfkbiz
+GO:1903708	positive regulation of hemopoiesis	0.0001381357313676	0.0270939908191202	1	Prkca,Nckap1l,Pla2g3,Lilrb4a,Runx1,Nfkbiz
+GO:0045637	regulation of myeloid cell differentiation	0.00032888310122271	0.0387043481228417	1	Prkca,Nckap1l,Pla2g3,Lilrb4a,Runx1,Prdm16
+GO:0098657	import into cell	0.00049702023981461	0.0461774483196184	1	Slc29a1,Slc9a1,Kcnj8,Lrrc8a,Kcnj6,Slc6a11
+GO:0042063	gliogenesis	0.00338464826306881	0.0992471963698259	1	Sox1,Ndrg1,Ccl12,Zcchc24,Sun2,Syne2
+GO:0030048	actin filament-based movement	0.00020205715493386	0.0355370642046705	1	Kcnj8,Wipf3,Wasf2,Sun2,Syne2
+GO:0002761	regulation of myeloid leukocyte differentiation	0.00027629462899342	0.0373944018155333	1	Prkca,Pla2g3,Lilrb4a,Runx1,Prdm16
+GO:0043524	negative regulation of neuron apoptotic process	0.00117698472959162	0.0739164623163563	1	Ndnf,Ccl12,Pla2g3,Foxq1,Isl1
+GO:0021953	central nervous system neuron differentiation	0.00171678366560649	0.0739164623163563	1	Ndnf,Sox1,Prkca,Pou3f4,Isl1
+GO:0001666	response to hypoxia	0.00206682271905072	0.0848485116241876	1	Ndnf,Egln3,Slc9a1,Limd1,Acaa2
+GO:0060047	heart contraction	0.00313876738444212	0.0992471963698259	1	Prkca,Slc9a1,Kcnj8,Gjc1,Isl1
+GO:0002573	myeloid leukocyte differentiation	0.00336991175101505	0.0992471963698259	1	Prkca,Pla2g3,Lilrb4a,Runx1,Prdm16
+GO:0036293	response to decreased oxygen levels	0.00342956173502171	0.0992471963698259	1	Ndnf,Egln3,Slc9a1,Limd1,Acaa2
+GO:0003015	heart process	0.00386859043879438	0.103706607602902	1	Prkca,Slc9a1,Kcnj8,Gjc1,Isl1
+GO:1901215	negative regulation of neuron death	0.00463780095070432	0.120396163998934	1	Ndnf,Ccl12,Pla2g3,Foxq1,Isl1
+GO:0050730	regulation of peptidyl-tyrosine phosphorylation	0.00502112313819645	0.121934230941131	1	Prkca,Epha7,Vps25,Lilrb4a,Isl1
+GO:1903522	regulation of blood circulation	0.00502112313819645	0.121934230941131	1	Prkca,Slc9a1,Tbxa2r,Gjc1,Isl1
+GO:0002274	myeloid leukocyte activation	0.00518056884588885	0.121934230941131	1	Plpp6,Ndrg1,Pla2g3,Lilrb4a,Adgrf5
+GO:0048738	cardiac muscle tissue development	0.00534357305586851	0.124115955882154	1	Slc9a1,Gjc1,Hspg2,Asb2,Isl1
+GO:0014706	striated muscle tissue development	0.00717847844882366	0.133732450839028	1	Slc9a1,Gjc1,Hspg2,Asb2,Isl1
+GO:0046638	positive regulation of alpha-beta T cell differentiation	6.9257506420381e-05	0.0222930505808882	1	Nckap1l,Lilrb4a,Runx1,Nfkbiz

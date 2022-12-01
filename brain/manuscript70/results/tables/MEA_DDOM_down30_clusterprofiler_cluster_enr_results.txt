@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0034329	cell junction assembly	5.86095579185818e-08	0.00017286734872407	-1	Gabrb3,Hdac7,Bdnf,Lrrtm1,Cadm1,Slitrk3,Bhlhb9,Cdh22,Nrxn1,Negr1,Arhgap6,Wnt4,Il1rapl1,Gpm6a,Fbf1,Efnb1,Pkp2,Rock2,Sipa1l1,Rhpn1,Pip5k1a,Adgrb3
+GO:0007409	axonogenesis	5.64296788294914e-06	0.00280947356736474	-1	Stxbp5,Plxnc1,Bdnf,Numbl,Slitrk3,Fzd3,Sema6b,Matn2,Rhoh,Lhx4,Slit1,Map2k1,Stk25,Plppr4,Nrp2,Efnb1,Sipa1l1,Efna3,Arhgef28,Olfr160
+GO:0022407	regulation of cell-cell adhesion	9.56656149480585e-06	0.00381207160762643	-1	Spint2,Sirpa,Adamts18,Sox12,Il4ra,Cx3cl1,Irf1,Tgfb1,Slamf1,Hmgb1,Prkg1,Ildr2,Rhoh,Scrib,Wnt4,Map2k1,Malt1,Ripor2,Efnb1
+GO:0050808	synapse organization	2.0254733263729e-05	0.00451424057039509	-1	Gabrb3,Shisa7,Ppfia2,Bdnf,Lrrtm1,Cadm1,Slitrk3,Bhlhb9,Nrxn1,Negr1,Il1rapl1,Gpm6a,Nrp2,Efnb1,Rock2,Dlg4,Sipa1l1,Camkv,Adgrb3
+GO:0034765	regulation of ion transmembrane transport	2.26192611393423e-05	0.00451424057039509	-1	Atp2b4,Nos1,Cacna1b,Fxyd5,Cacna1h,Hap1,Camk2d,Cx3cl1,Tgfb1,Prkce,Nrxn1,Kcnh3,Kcnip3,Gpd1l,Slc31a2,Kcnip2,Pkd2,Cacna2d1,Dlg4
+GO:0043087	regulation of GTPase activity	2.25094423945369e-06	0.00172508068896191	-1	Rasal1,Dennd1b,Tbc1d22a,Plxnc1,Rgs16,Rab11fip2,Cx3cl1,Prkg1,Sgsm2,Scrib,Iqgap2,Arhgap6,Wnt4,Map2k1,Ripor2,Sipa1l1,Pip5k1a
+GO:1990778	protein localization to cell periphery	5.71520318842933e-06	0.00280947356736474	-1	Atp2b4,Adcy6,Rab11fip2,Camk2d,Fam126a,Tgfb1,Ankrd39,Nrxn1,Kcnip3,Scrib,Lin7c,Tub,Map2k1,Pkp2,Rock2,Dlg4,Pip5k1a
+GO:0044782	cilium organization	1.06242166216286e-05	0.00381207160762643	-1	Armc2,Mak,Dnal1,Hap1,Rfx2,Ttc26,Dnah5,Tbc1d32,Ccdc103,Rfx3,Rsph9,Zfp423,Tub,Fbf1,Pkd2,Rsph1,Drc1
+GO:0031346	positive regulation of cell projection organization	5.65627942721218e-05	0.006040652464454	-1	Plxnc1,Hap1,Bdnf,Fig4,Numbl,Cx3cl1,P3h1,Bhlhb9,Rreb1,Negr1,Il1rapl1,Plk5,Gpm6a,Map2k1,Stk25,Ripor2,Dlg4
+GO:0010959	regulation of metal ion transport	6.14413259232474e-05	0.006040652464454	-1	Atp2b4,Nos1,Cacna1b,Fxyd5,Hap1,Camk2d,Cx3cl1,Tgfb1,Slc30a10,Prkce,Jph4,Kcnip3,Gpd1l,Slc31a2,Kcnip2,Pkd2,Cacna2d1
+GO:0045785	positive regulation of cell adhesion	0.00015630665886949	0.00843259678775056	-1	Sirpa,Cdh13,Sox12,Il4ra,Cx3cl1,Col26a1,Irf1,Tgfb1,Slamf1,Hmgb1,Prkce,Rreb1,Rhoh,Ppp3ca,Wnt4,Malt1,Efnb1
+GO:1904062	regulation of cation transmembrane transport	3.21803448751006e-05	0.00499553054515411	-1	Atp2b4,Nos1,Fxyd5,Hap1,Camk2d,Cx3cl1,Tgfb1,Prkce,Nrxn1,Kcnip3,Gpd1l,Slc31a2,Kcnip2,Pkd2,Cacna2d1,Dlg4
+GO:0003012	muscle system process	0.00013265800906473	0.00843259678775056	-1	Atp2b4,Nos1,Sulf1,Myh7,Cacna1h,Camk2d,Sstr2,Prkg1,Ankrd39,Ppp3ca,Gpd1l,Map2k1,Pkp2,Cacna2d1,Rock2,Npy1r
+GO:0050767	regulation of neurogenesis	0.00025070868495493	0.010640010429085	-1	Nos1,Plxnc1,Hap1,Bdnf,Numbl,Cx3cl1,Arntl,Tgfb1,Bhlhb9,Fzd3,Sema6b,Ppp3ca,Il1rapl1,Slit1,Map2k1,Stk25
+GO:0006936	muscle contraction	1.28099742625189e-05	0.00381207160762643	-1	Atp2b4,Nos1,Sulf1,Myh7,Cacna1h,Camk2d,Sstr2,Prkg1,Ankrd39,Gpd1l,Map2k1,Pkp2,Cacna2d1,Rock2,Npy1r
+GO:0060271	cilium assembly	5.27735671909292e-05	0.006040652464454	-1	Armc2,Mak,Dnal1,Hap1,Rfx2,Ttc26,Dnah5,Tbc1d32,Ccdc103,Rfx3,Rsph9,Zfp423,Fbf1,Rsph1,Drc1
+GO:0051962	positive regulation of nervous system development	5.98687434519254e-05	0.006040652464454	-1	Plxnc1,Hap1,Bdnf,Numbl,Cx3cl1,Lrrtm1,Tgfb1,Slitrk3,Bhlhb9,Fzd3,Nrxn1,Il1rapl1,Map2k1,Stk25,Adgrb3
+GO:0018209	peptidyl-serine modification	6.99041498050367e-05	0.00624789243233534	-1	Atp2b4,Nos1,Bdnf,Camk2d,Tgfb1,Mast3,Rps6ka2,Prkce,Galnt16,Nrxn1,Camk1g,Gpd1l,Rock2,Camkv,Dclk3
+GO:0009306	protein secretion	0.00019135543534373	0.00940663034795002	-1	Nos1,Stxbp5,Doc2b,Rab11fip2,C2cd2l,Arntl,Tgfb1,P3h1,Prkce,Nrxn1,Rfx3,Ildr2,Ppp3ca,Trh,Psmd9
+GO:0035592	establishment of protein localization to extracellular region	0.00019657550017396	0.00950482401186263	-1	Nos1,Stxbp5,Doc2b,Rab11fip2,C2cd2l,Arntl,Tgfb1,P3h1,Prkce,Nrxn1,Rfx3,Ildr2,Ppp3ca,Trh,Psmd9
+GO:0071692	protein localization to extracellular region	0.00023056162903789	0.0103035675369089	-1	Nos1,Stxbp5,Doc2b,Rab11fip2,C2cd2l,Arntl,Tgfb1,P3h1,Prkce,Nrxn1,Rfx3,Ildr2,Ppp3ca,Trh,Psmd9
+GO:0006887	exocytosis	0.00028369939595351	0.0114625192135797	-1	Stxbp5,Stxbp2,Cacna1h,Ppfia2,Hap1,Doc2b,Il4ra,Rab11fip2,Otof,Prkce,Nrxn1,Syt5,Scrib,Il1rapl1,Lin7c
+GO:0007162	negative regulation of cell adhesion	5.08331705711818e-05	0.006040652464454	-1	Spint2,Adamts18,Cdh13,Plxnc1,Il4ra,Irf1,Tgfb1,Hmgb1,Prkg1,Ildr2,Scrib,Arhgap6,Map2k1,Ripor2
+GO:0015833	peptide transport	6.44352904129247e-05	0.0061306514002382	-1	Nos1,Doc2b,Rab11fip2,C2cd2l,Arntl,Prkce,Nrxn1,Slc15a5,Rfx3,Ildr2,Slc15a1,Ppp3ca,Trh,Psmd9
+GO:0018105	peptidyl-serine phosphorylation	0.00011851484257128	0.00843259678775056	-1	Atp2b4,Nos1,Bdnf,Camk2d,Tgfb1,Mast3,Rps6ka2,Prkce,Nrxn1,Camk1g,Gpd1l,Rock2,Camkv,Dclk3
+GO:0050863	regulation of T cell activation	0.0001556264950319	0.00843259678775056	-1	Sirpa,Sox12,Il4ra,Sh3rf1,Irf1,Tgfb1,Slamf1,Hmgb1,Ildr2,Rhoh,Scrib,Malt1,Ripor2,Efnb1
+GO:0042886	amide transport	0.00018029364795741	0.00916847189794336	-1	Nos1,Doc2b,Rab11fip2,C2cd2l,Arntl,Prkce,Nrxn1,Slc15a5,Rfx3,Ildr2,Slc15a1,Ppp3ca,Trh,Psmd9
+GO:0046879	hormone secretion	0.00030732309671464	0.0117719660559732	-1	Nos1,Doc2b,Rab11fip2,C2cd2l,Arntl,Prkce,Nrxn1,Rfx3,Ildr2,Ppp3ca,Trh,Psmd9,Nell2,Npy1r
+GO:0042060	wound healing	0.00032433537277364	0.0121588085911501	-1	Adamts18,Col5a1,Cx3cl1,Tgfb1,Srsf6,F13a1,Hmgb1,Prkce,Prkg1,Rreb1,Scrib,Wnt4,Clec7a,Rap2b
+GO:0009914	hormone transport	0.00038029894152783	0.0131962555314055	-1	Nos1,Doc2b,Rab11fip2,C2cd2l,Arntl,Prkce,Nrxn1,Rfx3,Ildr2,Ppp3ca,Trh,Psmd9,Nell2,Npy1r

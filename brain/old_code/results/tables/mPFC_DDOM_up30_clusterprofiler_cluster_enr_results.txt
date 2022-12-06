@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0010959	regulation of metal ion transport	1.3063004492105e-05	0.0119354609464707	1	Bin1,Cacna1a,Trpc6,Prkd1,Fxyd5,Mllt6,Cacna1g
+GO:0050767	regulation of neurogenesis	0.00014807539426413	0.0322975759414233	1	Spen,Mbd1,Hey1,Jade2,Bin1,Trpc6
+GO:0034765	regulation of ion transmembrane transport	0.00024099920901839	0.0322975759414233	1	Grk6,Bin1,Cacna1a,Trpc6,Prkd1,Fxyd5
+GO:0051924	regulation of calcium ion transport	0.00015288964564859	0.0322975759414233	1	Bin1,Cacna1a,Trpc6,Prkd1,Cacna1g
+GO:0032409	regulation of transporter activity	0.00018208430825051	0.0322975759414233	1	Grk6,Cacna1a,Trpc6,Fxyd5,Kmt2a
+GO:0070588	calcium ion transmembrane transport	0.00018782035871239	0.0322975759414233	1	Bin1,Cacna1a,Trpc6,Prkd1,Cacna1g
+GO:0006816	calcium ion transport	0.00107007992281275	0.0665342384171905	1	Bin1,Cacna1a,Trpc6,Prkd1,Cacna1g
+GO:0016570	histone modification	0.00179743163039388	0.0665342384171905	1	Jade2,Prkd1,Mllt6,Crtc2,Kmt2a
+GO:0007219	Notch signaling pathway	0.00031813856486079	0.0322975759414233	1	Spen,Mib2,Hey1,Ovol2
+GO:0032412	regulation of ion transmembrane transporter activity	0.00140710097947379	0.0665342384171905	1	Grk6,Cacna1a,Trpc6,Fxyd5
+GO:0022898	regulation of transmembrane transporter activity	0.00160437876933498	0.0665342384171905	1	Grk6,Cacna1a,Trpc6,Fxyd5
+GO:0042593	glucose homeostasis	0.00175343666800552	0.0665342384171905	1	Cacna1a,Gpr68,Crtc2,Hkdc1
+GO:0033500	carbohydrate homeostasis	0.00177548888705782	0.0665342384171905	1	Cacna1a,Gpr68,Crtc2,Hkdc1
+GO:0007204	positive regulation of cytosolic calcium ion concentration	0.003552513407806	0.0803003421808186	1	Cacna1a,Trpc6,Prkd1,Cacna1g
+GO:0051962	positive regulation of nervous system development	0.00373419739570324	0.0803003421808186	1	Spen,Jade2,Bin1,Adgrl2
+GO:0010720	positive regulation of cell development	0.00448222764809942	0.0803003421808186	1	Spen,Jade2,Bin1,Gpr68
+GO:1904062	regulation of cation transmembrane transport	0.00460891520970521	0.0803003421808186	1	Bin1,Cacna1a,Prkd1,Fxyd5
+GO:0018205	peptidyl-lysine modification	0.00523216785083532	0.0815574888689048	1	Jade2,Mllt6,Crtc2,Kmt2a
+GO:0051480	regulation of cytosolic calcium ion concentration	0.00532558980552253	0.0815574888689048	1	Cacna1a,Trpc6,Prkd1,Cacna1g
+GO:0050678	regulation of epithelial cell proliferation	0.00571048313966911	0.0841544883740711	1	Hey1,Ovol2,Prkd1,Rb1
+GO:0042391	regulation of membrane potential	0.00947558966765958	0.111474098789746	1	Igsf9b,Bin1,Cacna1a,Cacna1g
+GO:0050673	epithelial cell proliferation	0.00996579569576742	0.112414693488319	1	Hey1,Ovol2,Prkd1,Rb1
+GO:0006874	cellular calcium ion homeostasis	0.0117711958488464	0.122632733114226	1	Cacna1a,Trpc6,Prkd1,Cacna1g
+GO:0043966	histone H3 acetylation	0.00030990587479793	0.0322975759414233	1	Jade2,Crtc2,Kmt2a
+GO:0030048	actin filament-based movement	0.00156044680362644	0.0665342384171905	1	Fnbp1l,Bin1,Cacna1g
+GO:0035637	multicellular organismal signaling	0.00272847859851738	0.0803003421808186	1	Bin1,Cacna1a,Cacna1g
+GO:0016573	histone acetylation	0.00324708235091034	0.0803003421808186	1	Jade2,Crtc2,Kmt2a
+GO:1903169	regulation of calcium ion transmembrane transport	0.00364371761004679	0.0803003421808186	1	Bin1,Cacna1a,Prkd1
+GO:0006475	internal protein amino acid acetylation	0.00382236628555133	0.0803003421808186	1	Jade2,Crtc2,Kmt2a
+GO:0018393	internal peptidyl-lysine acetylation	0.00382236628555133	0.0803003421808186	1	Jade2,Crtc2,Kmt2a

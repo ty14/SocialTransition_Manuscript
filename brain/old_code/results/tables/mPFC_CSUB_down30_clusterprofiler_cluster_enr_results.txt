@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0007409	axonogenesis	4.04101737556629e-06	0.00455146167563782	-1	Tenm2,Cntn5,Plxna3,Chl1,Slit2,Flrt2,Ephb6,Stmn1,Lrrc4c,Ttl
+GO:0007411	axon guidance	1.94956679859009e-05	0.00750338593937583	-1	Tenm2,Cntn5,Plxna3,Chl1,Slit2,Flrt2,Ephb6
+GO:0097485	neuron projection guidance	1.99856541375898e-05	0.00750338593937583	-1	Tenm2,Cntn5,Plxna3,Chl1,Slit2,Flrt2,Ephb6
+GO:0021953	central nervous system neuron differentiation	5.45403578253054e-05	0.0153574165455465	-1	Satb2,Plxna3,Lmo4,Slit2,Cbln1,Ephb6
+GO:0009306	protein secretion	0.00177927269177879	0.096031384961719	-1	Adcyap1,Sergef,Pcsk1,Hmgcr,Cbln1,Adcy8
+GO:0035592	establishment of protein localization to extracellular region	0.00180180042060619	0.096031384961719	-1	Adcyap1,Sergef,Pcsk1,Hmgcr,Cbln1,Adcy8
+GO:0071692	protein localization to extracellular region	0.00194155238744524	0.096031384961719	-1	Adcyap1,Sergef,Pcsk1,Hmgcr,Cbln1,Adcy8
+GO:0033674	positive regulation of kinase activity	0.00273618139415889	0.109739109249203	-1	Adcyap1,Lmo4,Map3k5,Cacul1,Ephb6,Adcy8
+GO:0098742	cell-cell adhesion via plasma-membrane adhesion molecules	0.00062791661523927	0.0870059670208138	-1	Pcdh10,Tenm2,Cntn5,Cbln1,Lrrc4c
+GO:0050890	cognition	0.0059308893633016	0.129220894808157	-1	Hrh1,Chl1,Hmgcr,Deaf1,Adcy8
+GO:0046879	hormone secretion	0.00686791297276069	0.129220894808157	-1	Adcyap1,Cckbr,Hmgcr,Trpv6,Adcy8
+GO:0009914	hormone transport	0.00749356270085651	0.131876843584152	-1	Adcyap1,Cckbr,Hmgcr,Trpv6,Adcy8
+GO:0060562	epithelial tube morphogenesis	0.00877209516440128	0.13915703225959	-1	Ovol2,Lmo4,Slit2,Deaf1,Kdm6a
+GO:0051047	positive regulation of secretion	0.0109096746492889	0.153596735193936	-1	Adcyap1,Cckbr,Pcsk1,Sytl2,Adcy8
+GO:0051656	establishment of organelle localization	0.0119898479386367	0.157027384263663	-1	Kif22,Xpo1,Cep83,F8a,Ttl
+GO:0014020	primary neural tube formation	0.00058389608037106	0.0870059670208138	-1	Ovol2,Lmo4,Deaf1,Kdm6a
+GO:0001841	neural tube formation	0.00091049339817761	0.0930584145181462	-1	Ovol2,Lmo4,Deaf1,Kdm6a
+GO:0001838	embryonic epithelial tube formation	0.00159596746684014	0.096031384961719	-1	Ovol2,Lmo4,Deaf1,Kdm6a
+GO:0051961	negative regulation of nervous system development	0.00204627624030579	0.096031384961719	-1	Adcyap1,Plxna3,Slit2,Cbln1
+GO:0072175	epithelial tube formation	0.00204627624030579	0.096031384961719	-1	Ovol2,Lmo4,Deaf1,Kdm6a
+GO:0006694	steroid biosynthetic process	0.00213665680423578	0.0962620118118855	-1	Hrh1,Hmgcr,Dkk3,Dhcr24
+GO:0035148	tube formation	0.0027923095873773	0.109739109249203	-1	Ovol2,Lmo4,Deaf1,Kdm6a
+GO:0016331	morphogenesis of embryonic epithelium	0.00296113206580767	0.109739109249203	-1	Ovol2,Lmo4,Deaf1,Kdm6a
+GO:0001764	neuron migration	0.00363982636771748	0.120576291438319	-1	Satb2,Chl1,Flrt2,Nr2f1
+GO:0021915	neural tube development	0.00377364148331445	0.121437485327713	-1	Ovol2,Lmo4,Deaf1,Kdm6a
+GO:0090276	regulation of peptide hormone secretion	0.00678282532966004	0.129220894808157	-1	Adcyap1,Cckbr,Hmgcr,Adcy8
+GO:1901617	organic hydroxy compound biosynthetic process	0.00678282532966004	0.129220894808157	-1	Hmgcr,Opn3,Dkk3,Dhcr24
+GO:0003018	vascular process in circulatory system	0.00688372991034108	0.129220894808157	-1	Hrh1,Adcyap1,Slit2,Hmgcr
+GO:0002791	regulation of peptide secretion	0.00729728957611456	0.131876843584152	-1	Adcyap1,Cckbr,Hmgcr,Adcy8
+GO:0090087	regulation of peptide transport	0.00761801036579352	0.132004390144115	-1	Adcyap1,Cckbr,Hmgcr,Adcy8

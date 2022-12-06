@@ -1,0 +1,22 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0003012	muscle system process	0.00152972848032315	0.152457544713505	1	Trip10,Errfi1,Tpm2,Nos3,Mylk,Ptgs1
+GO:0010038	response to metal ion	0.00164612805549845	0.152457544713505	1	Pdcd6,Mt2,Cp,Mylk,Cpne3
+GO:0007006	mitochondrial membrane organization	0.00026359170086192	0.117730451882085	1	Apoo,Slc25a5,Ier3,Cox18
+GO:0021782	glial cell development	0.00043420035814161	0.117730451882085	1	C5ar1,Akt2,Vim,S100a9
+GO:1990266	neutrophil migration	0.00055181669281716	0.117730451882085	1	Il1r1,C5ar1,Ccl6,S100a9
+GO:0034341	response to interferon-gamma	0.00070940095080451	0.117730451882085	1	Ccl6,Vim,Ifitm1,Parp9
+GO:0006633	fatty acid biosynthetic process	0.001014180309334	0.141546856985277	1	Abhd1,Pecr,Ptgs1,Hacd2
+GO:0097530	granulocyte migration	0.00116930012292186	0.141546856985277	1	Il1r1,C5ar1,Ccl6,S100a9
+GO:0014002	astrocyte development	0.00014112356069642	0.117730451882085	1	C5ar1,Vim,S100a9
+GO:0048708	astrocyte differentiation	0.00185621955052369	0.152457544713505	1	C5ar1,Vim,S100a9
+GO:1901029	negative regulation of mitochondrial outer membrane permeabilization involved in apoptotic signaling pathway	0.00044333926587061	0.117730451882085	1	Slc25a5,Ier3
+GO:0009642	response to light intensity	0.00053101189824736	0.117730451882085	1	Akt2,Slc24a2
+GO:0014745	negative regulation of muscle adaptation	0.00062638579303344	0.117730451882085	1	Errfi1,Nos3
+GO:0030497	fatty acid elongation	0.000729416930139	0.117730451882085	1	Pecr,Hacd2
+GO:0035795	negative regulation of mitochondrial membrane permeability	0.0010840163562999	0.141546856985277	1	Slc25a5,Ier3
+GO:1905709	negative regulation of membrane permeability	0.00135790341695416	0.151733337279088	1	Slc25a5,Ier3
+GO:0001975	response to amphetamine	0.0018241048777272	0.152457544713505	1	Nr4a2,Gnal
+GO:0030728	ovulation	0.00199410049425998	0.152457544713505	1	Plat,Nos3
+GO:1901028	regulation of mitochondrial outer membrane permeabilization involved in apoptotic signaling pathway	0.00199410049425998	0.152457544713505	1	Slc25a5,Ier3
+GO:0014075	response to amine	0.00217132318295546	0.157706631183081	1	Nr4a2,Gnal
+GO:0007263	nitric oxide mediated signal transduction	0.0023557309152209	0.162952815188212	1	Mt2,Nos3

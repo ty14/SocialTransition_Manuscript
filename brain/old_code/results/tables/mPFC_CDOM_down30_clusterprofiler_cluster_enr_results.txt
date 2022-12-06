@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0007409	axonogenesis	7.57819258482737e-07	0.00121330851805499	-1	Twf2,Rtn4r,Nr4a3,Unc5a,Ifrd1,Sema7a,Brsk1,Numb,Skil,Adcy1,Prdm8,Dclk1
+GO:0050808	synapse organization	0.00017932718856202	0.025819271056395	-1	Unc13b,Lrrc4,Slc8a2,Wasl,Gabra1,Numb,Zfp365,Dgkz,Atp2b2
+GO:0016358	dendrite development	4.46003987972249e-05	0.0178518964659418	-1	Spire1,Wasl,Sgk1,Nedd4l,Numb,Mink1,Zfp365,Dclk1
+GO:0030900	forebrain development	0.00021432205139701	0.0263954526457378	-1	Rtn4r,Nr4a3,Nrg3,Sema7a,Numb,Emx1,Prdm8,Dclk1
+GO:0030099	myeloid cell differentiation	0.00041264489349454	0.0265082612289644	-1	Hspa1b,Fos,Junb,Klf2,Klf13,Cebpb,Klf10,Nfkbia
+GO:0034329	cell junction assembly	0.00042522430387949	0.0265082612289644	-1	Fam107a,Lrrc4,Dapk3,Gabra1,Nedd4l,Numb,Peak1,Zfp703
+GO:0031346	positive regulation of cell projection organization	0.00043811408100533	0.0265082612289644	-1	Twf2,Wasl,Sgk1,Sema7a,Plekhm1,Numb,Skil,Fzd4
+GO:0009117	nucleotide metabolic process	0.00046484770890839	0.0265802017011155	-1	Pdk3,Acss2,Nudt13,Pfkl,Papss2,Adcy1,Atp2b2,Hpca
+GO:0006753	nucleoside phosphate metabolic process	0.00052229570358818	0.0269749326029754	-1	Pdk3,Acss2,Nudt13,Pfkl,Papss2,Adcy1,Atp2b2,Hpca
+GO:0050767	regulation of neurogenesis	0.00052229570358818	0.0269749326029754	-1	Twf2,Rtn4r,Sgk1,Ifrd1,Sema7a,Numb,Skil,Zfp365
+GO:0001558	regulation of cell growth	0.00056905495967916	0.0284714668971058	-1	Hspa1b,Twf2,Fam107a,Rtn4r,Sgk1,Ifrd1,Sema7a,Nedd4l
+GO:0048813	dendrite morphogenesis	1.1132524042968e-05	0.00891187845755487	-1	Wasl,Sgk1,Nedd4l,Numb,Mink1,Zfp365,Dclk1
+GO:1990138	neuron projection extension	1.9539055485592e-05	0.0104276854012581	-1	Twf2,Rtn4r,Ifrd1,Sema7a,Nedd4l,Emx1,Dclk1
+GO:0099003	vesicle-mediated transport in synapse	7.84705991270865e-05	0.0230837766181552	-1	Unc13b,Napa,Synj2,Brsk1,Numb,Adcy1,Hpca
+GO:0021537	telencephalon development	8.65072496538361e-05	0.0230837766181552	-1	Rtn4r,Nr4a3,Nrg3,Sema7a,Numb,Emx1,Prdm8
+GO:0048588	developmental cell growth	0.00013438943704834	0.0235025137968937	-1	Twf2,Rtn4r,Ifrd1,Sema7a,Nedd4l,Emx1,Dclk1
+GO:0060560	developmental growth involved in morphogenesis	0.00014679413614101	0.0235025137968937	-1	Twf2,Rtn4r,Ifrd1,Sema7a,Nedd4l,Emx1,Dclk1
+GO:0006163	purine nucleotide metabolic process	0.00075368943970701	0.0301674115209045	-1	Pdk3,Acss2,Pfkl,Papss2,Adcy1,Atp2b2,Hpca
+GO:0072521	purine-containing compound metabolic process	0.00107081786538957	0.0380985724738605	-1	Pdk3,Acss2,Pfkl,Papss2,Adcy1,Atp2b2,Hpca
+GO:0009991	response to extracellular stimulus	0.00131002278365487	0.0427148328781553	-1	Wdr24,Fos,Prkab2,Fam107a,Brsk1,Klf10,Tmem135
+GO:0043161	proteasome-mediated ubiquitin-dependent protein catabolic process	0.00181554436100763	0.0501169323610272	-1	Hspa1b,Clu,Stt3b,Rnf144b,Nedd4l,Rmnd5b,Dnajb12
+GO:0051090	regulation of DNA-binding transcription factor activity	0.00196290436262562	0.0508745137086886	-1	Hspa1b,Clu,Ifrd1,Hmgn3,Adcy1,Nfkbia,Fzd4
+GO:0050770	regulation of axonogenesis	0.00010678298306542	0.0235025137968937	-1	Twf2,Rtn4r,Ifrd1,Sema7a,Brsk1,Skil
+GO:0008361	regulation of cell size	0.00023543583321588	0.0264055296881447	-1	Prr16,Twf2,Rtn4r,Ifrd1,Sema7a,Atp2b2
+GO:0045637	regulation of myeloid cell differentiation	0.00028664152172056	0.0264055296881447	-1	Hspa1b,Fos,Klf13,Cebpb,Klf10,Nfkbia
+GO:0030100	regulation of endocytosis	0.00040593149340405	0.0265082612289644	-1	Clu,Wasl,Cd14,Numb,Snph,Hpca
+GO:0031668	cellular response to extracellular stimulus	0.00040593149340405	0.0265082612289644	-1	Wdr24,Fos,Prkab2,Fam107a,Brsk1,Klf10
+GO:2001020	regulation of response to DNA damage stimulus	0.00068742516960765	0.0301674115209045	-1	Clu,Sirt7,Spire1,Rad52,Skil,Zfp365
+GO:0051091	positive regulation of DNA-binding transcription factor activity	0.0008350031689273	0.0326069273411664	-1	Hspa1b,Clu,Ifrd1,Hmgn3,Adcy1,Fzd4
+GO:0051258	protein polymerization	0.00090044081640393	0.033526817178712	-1	Hspa1b,Twf2,Fam107a,Spire1,Wasl,Sgk1

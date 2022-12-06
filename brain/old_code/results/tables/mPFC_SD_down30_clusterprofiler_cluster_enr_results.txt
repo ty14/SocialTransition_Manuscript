@@ -1,0 +1,22 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0007015	actin filament organization	0.00041394605857715	0.0797565615938085	-1	Ssh1,Carmil3,Dpysl3,Ctnna3,Pcdh15,Myo1g
+GO:0050808	synapse organization	0.00061608287613347	0.0797565615938085	-1	Ntng1,Ssh1,Ppfia4,Ephb2,Pcdh17,Dnm3
+GO:0120032	regulation of plasma membrane bounded cell projection assembly	0.00094563670927782	0.0797565615938085	-1	Mak,Ephb2,Dpysl3,Dnm3
+GO:0060491	regulation of cell projection assembly	0.00099793129138966	0.0797565615938085	-1	Mak,Ephb2,Dpysl3,Dnm3
+GO:0031345	negative regulation of cell projection organization	0.00112781606042666	0.0797565615938085	-1	Mak,Ephb2,Dpysl3,Dnm3
+GO:0048193	Golgi vesicle transport	0.00280075822886367	0.108934754270013	-1	Pgap1,Lman2l,Golga4,Sorcs1
+GO:0001894	tissue homeostasis	0.00318152911039043	0.117852130956317	-1	Acaca,Mak,Whrn,Pcdh15
+GO:0060249	anatomical structure homeostasis	0.00516792359884097	0.143575020283589	-1	Acaca,Mak,Whrn,Pcdh15
+GO:0051489	regulation of filopodium assembly	0.00024348713084901	0.0797565615938085	-1	Ephb2,Dpysl3,Dnm3
+GO:0001895	retina homeostasis	0.00025638212322694	0.0797565615938085	-1	Mak,Whrn,Pcdh15
+GO:0046847	filopodium assembly	0.00056852239790943	0.0797565615938085	-1	Ephb2,Dpysl3,Dnm3
+GO:0042472	inner ear morphogenesis	0.00212609898968683	0.108934754270013	-1	Whrn,Ephb2,Pcdh15
+GO:0042471	ear morphogenesis	0.00349036542422621	0.123415313325511	-1	Whrn,Ephb2,Pcdh15
+GO:0010977	negative regulation of neuron projection development	0.00494495710162636	0.142468744565375	-1	Ephb2,Dpysl3,Dnm3
+GO:0010950	positive regulation of endopeptidase activity	0.00565148357502733	0.144323812170529	-1	Casp2,Aph1c,Senp1
+GO:0010952	positive regulation of peptidase activity	0.00661588222166541	0.147041713137165	-1	Casp2,Aph1c,Senp1
+GO:0051648	vesicle localization	0.00778348873402249	0.151297296146234	-1	Pcdh17,Dnm3,Myo1g
+GO:0007416	synapse assembly	0.00800800224688128	0.151297296146234	-1	Ephb2,Pcdh17,Dnm3
+GO:0031915	positive regulation of synaptic plasticity	0.00039465411128728	0.0797565615938085	-1	Ssh1,Ephb2
+GO:0050910	detection of mechanical stimulus involved in sensory perception of sound	0.00099094964519646	0.0797565615938085	-1	Whrn,Pcdh15
+GO:0060088	auditory receptor cell stereocilium organization	0.00108384845711494	0.0797565615938085	-1	Whrn,Pcdh15

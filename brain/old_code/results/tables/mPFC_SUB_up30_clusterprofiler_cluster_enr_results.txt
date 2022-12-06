@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0050803	regulation of synapse structure or activity	1.47164723325686e-05	0.0175718034650758	1	St8sia2,Gpc6,Bdnf,Six4,Slc17a8,Lzts3,Pik3r1
+GO:0050807	regulation of synapse organization	0.00012240071797664	0.0503775586619668	1	St8sia2,Gpc6,Bdnf,Six4,Lzts3,Pik3r1
+GO:0018209	peptidyl-serine modification	0.00069247286718344	0.096566767186429	1	Atp2b4,Rps6ka2,Bdnf,Stk4,Sgk3,Mgat5b
+GO:0060537	muscle tissue development	0.00321192718119768	0.124109341196077	1	Tshz3,Nr4a1,Bdnf,Ryr1,Six4,Flnb
+GO:0050808	synapse organization	0.00324396513536026	0.124109341196077	1	St8sia2,Gpc6,Bdnf,Six4,Lzts3,Pik3r1
+GO:0051963	regulation of synapse assembly	2.84624267550247e-05	0.0175718034650758	1	St8sia2,Gpc6,Bdnf,Six4,Pik3r1
+GO:0007416	synapse assembly	0.00025744290307755	0.079468559292097	1	St8sia2,Gpc6,Bdnf,Six4,Pik3r1
+GO:1901888	regulation of cell junction assembly	0.00046902741237346	0.0965209043358016	1	St8sia2,Gpc6,Bdnf,Six4,Pik3r1
+GO:0007611	learning or memory	0.00253777436130609	0.124109341196077	1	Hrh1,Bdnf,Hrh2,Btbd9,Kmt2a
+GO:0018105	peptidyl-serine phosphorylation	0.0031637083534657	0.124109341196077	1	Atp2b4,Rps6ka2,Bdnf,Stk4,Sgk3
+GO:0050890	cognition	0.00403469249530356	0.124109341196077	1	Hrh1,Bdnf,Hrh2,Btbd9,Kmt2a
+GO:0007517	muscle organ development	0.00432646359646464	0.127191523775765	1	Nr4a1,Bdnf,Ryr1,Six4,Flnb
+GO:0048167	regulation of synaptic plasticity	0.00500989037334371	0.134476004758173	1	Tshz3,Hrh1,Bdnf,Hrh2,Kmt2a
+GO:1904062	regulation of cation transmembrane transport	0.00517789172686072	0.136028376161425	1	Atp2b4,Cracr2a,Fxyd6,Akap7,Kcnip2
+GO:0008306	associative learning	0.0004268802151248	0.0965209043358016	1	Hrh1,Bdnf,Hrh2,Kmt2a
+GO:0007613	memory	0.00128019480322651	0.11316185626602	1	Hrh1,Bdnf,Hrh2,Btbd9
+GO:0007612	learning	0.0022120819109904	0.124109341196077	1	Hrh1,Bdnf,Hrh2,Kmt2a
+GO:0019722	calcium-mediated signaling	0.00262136180407022	0.124109341196077	1	Atp2b4,Grm1,Xcr1,Alms1
+GO:0007519	skeletal muscle tissue development	0.00313399468429224	0.124109341196077	1	Nr4a1,Ryr1,Six4,Flnb
+GO:0060538	skeletal muscle organ development	0.00383475427356953	0.124109341196077	1	Nr4a1,Ryr1,Six4,Flnb
+GO:0035924	cellular response to vascular endothelial growth factor stimulus	0.00072543990366388	0.096566767186429	1	Atp2b4,Egr3,Nr4a1
+GO:0015800	acidic amino acid transport	0.00113638225773523	0.11316185626602	1	Grm1,Bdnf,Slc17a8
+GO:0008542	visual learning	0.00128307987070594	0.11316185626602	1	Hrh1,Hrh2,Kmt2a
+GO:0007632	visual behavior	0.00149647411760301	0.123183448417427	1	Hrh1,Hrh2,Kmt2a
+GO:0051965	positive regulation of synapse assembly	0.00167027965511278	0.123557467494982	1	St8sia2,Bdnf,Pik3r1
+GO:0006835	dicarboxylic acid transport	0.00233890606105269	0.124109341196077	1	Grm1,Bdnf,Slc17a8
+GO:0046683	response to organophosphorus	0.00241359342471888	0.124109341196077	1	Ryr1,Akap7,Pik3r1
+GO:0008589	regulation of smoothened signaling pathway	0.00264647223816824	0.124109341196077	1	Runx2,Dync2h1,Ift122
+GO:0044344	cellular response to fibroblast growth factor stimulus	0.00280916746911959	0.124109341196077	1	Egr3,Runx2,Nr4a1
+GO:0071774	response to fibroblast growth factor	0.00297790371164265	0.124109341196077	1	Egr3,Runx2,Nr4a1

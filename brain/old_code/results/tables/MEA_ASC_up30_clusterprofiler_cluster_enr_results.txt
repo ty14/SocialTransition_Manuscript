@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:1901652	response to peptide	0.00010269000137557	0.0614978991357889	1	Smpd3,Tyk2,Lpl,Mdm2,Acvr1c,Foxo1,Irf5,Ptpre
+GO:0022407	regulation of cell-cell adhesion	0.0002148364099324	0.0614978991357889	1	Sox2,Efnb3,Egr3,Tyk2,Adtrp,Ikzf1,Dock8,Peli1
+GO:1903037	regulation of leukocyte cell-cell adhesion	0.00018578207458829	0.0614978991357889	1	Efnb3,Egr3,Tyk2,Adtrp,Ikzf1,Dock8,Peli1
+GO:0048167	regulation of synaptic plasticity	0.00033467682428607	0.0614978991357889	1	Unc13a,Ptpn5,Baiap2,Kcnn2,Grin2b,Rin1,Erc2
+GO:0007159	leukocyte cell-cell adhesion	0.00036212605896074	0.0614978991357889	1	Efnb3,Egr3,Tyk2,Adtrp,Ikzf1,Dock8,Peli1
+GO:0007264	small GTPase mediated signal transduction	0.00072880253035143	0.0699342574925307	1	Dennd1a,Myo9b,Baiap2,Arhgap33,Dock8,Arhgap17,Rhobtb2
+GO:0006820	anion transport	0.00167526652124031	0.0829063790311972	1	Clic1,Sfxn2,Slc7a8,Grin2b,Ano2,Slc37a1,Slc26a10
+GO:0034765	regulation of ion transmembrane transport	0.00167526652124031	0.0829063790311972	1	Clic1,Dapk1,Kcnip2,Tesc,Kcnn2,Cemip,Kcnj4
+GO:0022409	positive regulation of cell-cell adhesion	0.00058282187810225	0.0699342574925307	1	Sox2,Efnb3,Egr3,Tyk2,Ikzf1,Dock8
+GO:1901653	cellular response to peptide	0.00075282502310511	0.0699342574925307	1	Smpd3,Tyk2,Lpl,Mdm2,Foxo1,Ptpre
+GO:0050863	regulation of T cell activation	0.00129826911961948	0.0761604198525013	1	Efnb3,Egr3,Tyk2,Ikzf1,Dock8,Peli1
+GO:0051251	positive regulation of lymphocyte activation	0.00430145836511755	0.126410970803506	1	Efnb3,Egr3,Tyk2,Ikzf1,Dock8,Peli1
+GO:0007015	actin filament organization	0.0050479379811388	0.134196007167119	1	Actn1,Baiap2,Fhod1,Arhgap17,Rhobtb2,Gas7
+GO:0045785	positive regulation of cell adhesion	0.00643474327919428	0.147327604224637	1	Sox2,Efnb3,Egr3,Tyk2,Ikzf1,Dock8
+GO:0050808	synapse organization	0.00722372102076273	0.151245031321521	1	Dgkb,Unc13a,Cdh9,Baiap2,Grin2b,Erc2
+GO:0050870	positive regulation of T cell activation	0.00105238534863071	0.0699342574925307	1	Efnb3,Egr3,Tyk2,Ikzf1,Dock8
+GO:2000116	regulation of cysteine-type endopeptidase activity	0.00145629576484605	0.0794940394946042	1	Sox2,Dapk1,Mdm2,Acvr1c,Grin2b
+GO:1903039	positive regulation of leukocyte cell-cell adhesion	0.00168153778406939	0.0829063790311972	1	Efnb3,Egr3,Tyk2,Ikzf1,Dock8
+GO:0090596	sensory organ morphogenesis	0.00493961536747255	0.134196007167119	1	Sox2,Ikzf1,Foxg1,Ski,Foxf2
+GO:0043270	positive regulation of ion transport	0.00561729762574772	0.139659719161247	1	Kcnip2,Tesc,Kcnn2,Grin2b,Cemip
+GO:0016311	dephosphorylation	0.00699856858227914	0.150658585344245	1	Ptpn5,Ctdsp2,Plppr4,Mtmr12,Ptpre
+GO:0052548	regulation of endopeptidase activity	0.00795095908953125	0.157144857569974	1	Sox2,Dapk1,Mdm2,Acvr1c,Grin2b
+GO:0043434	response to peptide hormone	0.00804178626850826	0.157144857569974	1	Tyk2,Lpl,Acvr1c,Foxo1,Ptpre
+GO:0006644	phospholipid metabolic process	0.00879455797809063	0.158138677203562	1	Dgkb,Smpd3,Lpcat4,Plppr4,Mtmr12
+GO:0050900	leukocyte migration	0.0101197428768545	0.16566366028441	1	Smpd3,Vegfd,Adtrp,Myo9b,Dock8
+GO:1904062	regulation of cation transmembrane transport	0.0102270467493217	0.16566366028441	1	Dapk1,Kcnip2,Tesc,Kcnn2,Cemip
+GO:1903510	mucopolysaccharide metabolic process	0.00012544204067812	0.0614978991357889	1	Smpd3,Slc35d1,Chst11,Cemip
+GO:0030203	glycosaminoglycan metabolic process	0.00031546298282545	0.0614978991357889	1	Smpd3,Slc35d1,Chst11,Cemip
+GO:0006022	aminoglycan metabolic process	0.00057270745848725	0.0699342574925307	1	Smpd3,Slc35d1,Chst11,Cemip
+GO:0015698	inorganic anion transport	0.0018999825302076	0.0888281109606893	1	Clic1,Ano2,Slc37a1,Slc26a10

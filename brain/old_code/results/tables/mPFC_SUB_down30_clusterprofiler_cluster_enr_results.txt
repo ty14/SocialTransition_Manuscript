@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0050808	synapse organization	6.15635905698002e-05	0.0125557143928054	-1	Tanc1,Slitrk2,Nfia,Clstn2,Sparc,Wnt7b,Cdh9,Tmeff1,Chchd10
+GO:0001667	ameboidal-type cell migration	0.0001949965964491	0.023875889398255	-1	Gata2,Itgb2,Cap1,Akt1,Tgfb2,Sparc,Tac1,Prr5l
+GO:0015980	energy derivation by oxidation of organic compounds	0.00011763275646182	0.0157462795053279	-1	Ppp1r2,Ugp2,Akt1,Cox6a1,Chchd10,Cox5b,Uqcrc1
+GO:0042063	gliogenesis	0.00023782013031027	0.023875889398255	-1	Akt1,Trf,Tgfb2,Sox11,Olig2,Cnp,Dbi
+GO:1903532	positive regulation of secretion by cell	0.00029650530046999	0.0263337856186513	-1	Htr2c,Gata2,Itgb2,Nnat,Tgfb2,Sox11,Tac1
+GO:0050678	regulation of epithelial cell proliferation	0.00056983881070923	0.0352054261191213	-1	Gata2,Akt1,Tgfb2,Sparc,Sox11,Dlk1,Sulf1
+GO:0051047	positive regulation of secretion	0.00067670289171422	0.0362517957334375	-1	Htr2c,Gata2,Itgb2,Nnat,Tgfb2,Sox11,Tac1
+GO:0006091	generation of precursor metabolites and energy	0.00087786671657345	0.0362517957334375	-1	Ppp1r2,Ugp2,Akt1,Cox6a1,Chchd10,Cox5b,Uqcrc1
+GO:0050673	epithelial cell proliferation	0.00145497770962695	0.0424937030601096	-1	Gata2,Akt1,Tgfb2,Sparc,Sox11,Dlk1,Sulf1
+GO:0045664	regulation of neuron differentiation	0.00021015987913593	0.023875889398255	-1	Brinp3,Gata2,Zfp536,Sox11,Olig2,Mycl
+GO:0045765	regulation of angiogenesis	0.0007564456010619	0.0362517957334375	-1	Gata2,Itgb2,Tspan12,Tgfb2,Sparc,Sulf1
+GO:1901342	regulation of vasculature development	0.00080894830491388	0.0362517957334375	-1	Gata2,Itgb2,Tspan12,Tgfb2,Sparc,Sulf1
+GO:0010631	epithelial cell migration	0.00083623357072289	0.0362517957334375	-1	Gata2,Itgb2,Akt1,Tgfb2,Sparc,Tac1
+GO:0090132	epithelium migration	0.00086422437185235	0.0362517957334375	-1	Gata2,Itgb2,Akt1,Tgfb2,Sparc,Tac1
+GO:0090130	tissue migration	0.00089293302008498	0.0362517957334375	-1	Gata2,Itgb2,Akt1,Tgfb2,Sparc,Tac1
+GO:0007204	positive regulation of cytosolic calcium ion concentration	0.00156928735684458	0.0441209854778328	-1	Htr2c,Gata2,Tgfb2,Lpar4,Tac1,Dbi
+GO:0051962	positive regulation of nervous system development	0.00168437790856154	0.045094047166051	-1	Slitrk2,Trf,Clstn2,Sox11,Rnd2,Olig2
+GO:0031589	cell-substrate adhesion	0.00204092845684449	0.0489309791853055	-1	Plekha2,Npy,Itgb2,Akip1,Parvg,Itga9
+GO:0001655	urogenital system development	0.00245190303148782	0.0515174601882521	-1	Gata2,Nfia,Tgfb2,Wnt7b,Odc1,Sulf1
+GO:0051098	regulation of binding	0.00278157044736414	0.0531914348706476	-1	Ppp1r2,Mad2l2,Akt1,Tgfb2,Sox11,Grem2
+GO:0051480	regulation of cytosolic calcium ion concentration	0.00278157044736414	0.0531914348706476	-1	Htr2c,Gata2,Tgfb2,Lpar4,Tac1,Dbi
+GO:0021510	spinal cord development	3.19333613890108e-05	0.0125557143928054	-1	Pbx3,Gata2,Akt1,Sox11,Olig2
+GO:0006576	cellular biogenic amine metabolic process	4.01033028602733e-05	0.0125557143928054	-1	Npy,Htr2c,Maob,Tgfb2,Odc1
+GO:0033555	multicellular organismal response to stress	4.01033028602733e-05	0.0125557143928054	-1	Htr2c,Penk,Akt1,Tac1,Dbi
+GO:0044106	cellular amine metabolic process	6.89948017116217e-05	0.0125557143928054	-1	Npy,Htr2c,Maob,Tgfb2,Odc1
+GO:0009308	amine metabolic process	8.35991067831464e-05	0.0132735895914121	-1	Npy,Htr2c,Maob,Tgfb2,Odc1
+GO:0010634	positive regulation of epithelial cell migration	0.00022739449385525	0.023875889398255	-1	Gata2,Akt1,Tgfb2,Sparc,Tac1
+GO:0009060	aerobic respiration	0.00029467720998824	0.0263337856186513	-1	Akt1,Cox6a1,Chchd10,Cox5b,Uqcrc1
+GO:0001936	regulation of endothelial cell proliferation	0.0003114841614788	0.0263337856186513	-1	Gata2,Akt1,Sparc,Dlk1,Sulf1
+GO:0001935	endothelial cell proliferation	0.00047345526259167	0.0330660288656701	-1	Gata2,Akt1,Sparc,Dlk1,Sulf1

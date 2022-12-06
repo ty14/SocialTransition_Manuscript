@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0042063	gliogenesis	9.20319928712453e-12	5.71809303076342e-09	-1	Fa2h,Nkx6-2,Tspan2,Dab2ip,Mal,Ndrg1,Enpp2,Qk,Cntn2,Myrf,Plp1,Gjc2,Arhgef10,Cd9,Aspa,Mag,Cntnap2,Il33,Erbb3,Abcc8
+GO:0007272	ensheathment of neurons	9.52389211117164e-14	1.18346890918296e-10	-1	Fa2h,Nkx6-2,Tspan2,Mal,Ugt8a,Ndrg1,Qk,Cntn2,Mbp,Myrf,Plp1,Cldn11,Arhgef10,Cd9,Mag,Cntnap2,Bcas1
+GO:0008366	axon ensheathment	9.52389211117164e-14	1.18346890918296e-10	-1	Fa2h,Nkx6-2,Tspan2,Mal,Ugt8a,Ndrg1,Qk,Cntn2,Mbp,Myrf,Plp1,Cldn11,Arhgef10,Cd9,Mag,Cntnap2,Bcas1
+GO:0042552	myelination	1.02070703732804e-12	8.45575198291757e-10	-1	Fa2h,Nkx6-2,Tspan2,Mal,Ugt8a,Ndrg1,Qk,Cntn2,Mbp,Myrf,Plp1,Arhgef10,Cd9,Mag,Cntnap2,Bcas1
+GO:0010001	glial cell differentiation	3.77730734124179e-10	1.17345034640419e-07	-1	Fa2h,Nkx6-2,Tspan2,Mal,Ndrg1,Enpp2,Qk,Cntn2,Myrf,Plp1,Arhgef10,Aspa,Mag,Cntnap2,Il33,Erbb3
+GO:0007264	small GTPase mediated signal transduction	2.39065982785027e-06	0.00042438705665823	-1	Erbin,Usp8,Srgap1,Dab2ip,Lpar1,Rhobtb3,Rhog,Cdc42ep2,Dock10,Adcyap1r1,Dennd4b,Arhgef10,Abca1,Iqsec3,Gna12
+GO:0050767	regulation of neurogenesis	2.07250162378402e-05	0.00206028477210698	-1	Sema6d,Sema3c,Nkx6-2,Cux1,Ctnna1,Enpp2,Qk,Mbp,Gjc2,Aspa,Mag,Il33,Abcc8,Plxnb3
+GO:0048709	oligodendrocyte differentiation	1.48575960972599e-11	7.38500723908015e-09	-1	Fa2h,Nkx6-2,Tspan2,Mal,Enpp2,Qk,Cntn2,Myrf,Plp1,Aspa,Mag,Cntnap2,Il33
+GO:0051271	negative regulation of cellular component movement	1.73545887976749e-06	0.00033177477045595	-1	Sema6d,Padi2,Srgap1,Dab2ip,Ctnna1,Clic4,Cd9,Il33,Abcc8,Tnfaip6,Plxnb3,Gna12,Dpysl3
+GO:0022604	regulation of cell morphogenesis	3.88884728169591e-06	0.00064399225790345	-1	Epb41l2,Cux1,Lpar1,Rhobtb3,Rhog,Cdc42ep2,Enpp2,Cntn2,Ermn,Lims1,Myo10,Plxnb3,Gna12
+GO:0040013	negative regulation of locomotion	4.14598997040768e-06	0.00064399225790345	-1	Sema6d,Padi2,Sema3c,Srgap1,Dab2ip,Ctnna1,Clic4,Il33,Abcc8,Tnfaip6,Plxnb3,Gna12,Dpysl3
+GO:0051962	positive regulation of nervous system development	7.44796042287968e-06	0.00084137007456549	-1	Slitrk6,Nkx6-2,Cux1,Flrt3,Flrt2,Enpp2,Qk,Ephb1,Gjc2,Aspa,Mag,Il33,Plxnb3
+GO:0007409	axonogenesis	0.00019082132047798	0.0130718426238984	-1	Sema6d,Slitrk6,Sema3c,Flrt3,Rhog,Flrt2,Cntn2,Mbp,Ephb1,Mag,Cntnap2,Plxnb3,Kif5b
+GO:0050808	synapse organization	0.00019461044821263	0.0130718426238984	-1	Slitrk6,Dab2ip,Flrt3,Ndrg1,Flrt2,Unc13c,Cntn2,Ppfibp2,Ephb1,Dock10,Dip2a,Cntnap2,Iqsec3
+GO:0007626	locomotory behavior	1.73449002929963e-06	0.00033177477045595	-1	Slitrk6,Strn,Klhl1,Oprk1,Zfhx3,Elavl4,Cntn2,Kcnd2,Abat,Pbx3,Cntnap2,Meis1
+GO:2000146	negative regulation of cell motility	7.32126831330802e-06	0.00084137007456549	-1	Sema6d,Padi2,Srgap1,Dab2ip,Ctnna1,Clic4,Il33,Abcc8,Tnfaip6,Plxnb3,Gna12,Dpysl3
+GO:0007265	Ras protein signal transduction	2.28637077048429e-05	0.00218547424660462	-1	Erbin,Usp8,Srgap1,Dab2ip,Lpar1,Rhog,Cdc42ep2,Dennd4b,Arhgef10,Abca1,Iqsec3,Gna12
+GO:0007015	actin filament organization	0.00035540884879512	0.0181464129286905	-1	Lpar1,Rhobtb3,Ctnna1,Wipf1,Rhog,Cdc42ep2,Pik3ca,Ermn,Arhgef10,Kank4,Arhgef10l,Dpysl3
+GO:0034765	regulation of ion transmembrane transport	0.00074317567852065	0.0281857446780113	-1	Pde4d,Oprk1,Clic4,Kcnd2,Plp1,Gjc2,Atp1b3,Oxsr1,Abcc8,Sphk2,Neto2,Kif5b
+GO:0021782	glial cell development	4.45355642146562e-09	1.1068259695874e-06	-1	Fa2h,Nkx6-2,Tspan2,Mal,Ndrg1,Cntn2,Myrf,Plp1,Arhgef10,Mag,Cntnap2
+GO:0030336	negative regulation of cell migration	2.63289445836485e-05	0.00242349466518495	-1	Sema6d,Padi2,Srgap1,Dab2ip,Clic4,Il33,Abcc8,Tnfaip6,Plxnb3,Gna12,Dpysl3
+GO:0060326	cell chemotaxis	5.0896943382895e-05	0.00451758207996298	-1	Ednrb,Padi2,Lpar1,Pde4d,Rhog,Enpp2,Mtus1,Ephb1,Oxsr1,Tnfaip6,Plxnb3
+GO:0016358	dendrite development	5.54335625014094e-05	0.00475058588260717	-1	Strn,Klhl1,Dab2ip,Cux1,Lpar1,Elavl4,Ephb1,Dock10,Dip2a,Cntnap2,Cpeb3
+GO:0043087	regulation of GTPase activity	0.00011740133959419	0.00884161284790749	-1	Dab2ip,Tbc1d8,Tbc1d9,Rhog,Dock10,Arhgef10,Chn2,Iqsec3,Wdr41,Lims1,Plxnb3
+GO:0010720	positive regulation of cell development	0.00025853843798172	0.0156022476340249	-1	Nkx6-2,Cux1,Enpp2,Qk,Runx1,Gjc2,Aspa,Mag,Il33,Lims1,Plxnb3
+GO:0001654	eye development	0.00063689796579765	0.027769457012895	-1	Slitrk6,Olfm3,Dzank1,Meis2,Clic4,Cep290,Ephb1,Pbx3,Mab21l1,Cryab,Meis1
+GO:0150063	visual system development	0.00067508527094987	0.0281857446780113	-1	Slitrk6,Olfm3,Dzank1,Meis2,Clic4,Cep290,Ephb1,Pbx3,Mab21l1,Cryab,Meis1
+GO:0048880	sensory system development	0.00072895129744292	0.0281857446780113	-1	Slitrk6,Olfm3,Dzank1,Meis2,Clic4,Cep290,Ephb1,Pbx3,Mab21l1,Cryab,Meis1
+GO:0034329	cell junction assembly	0.00092930605038208	0.0316379464304557	-1	Slitrk6,Ctnna1,Ugt8a,Flrt3,Flrt2,Enpp2,Ephb1,Cldn11,Cd9,Cntnap2,Lims1
+GO:0031346	positive regulation of cell projection organization	0.00096383357329339	0.0323020522147055	-1	Fut9,Dab2ip,Cux1,Dzip1,Scarb2,Cdc42ep2,Elavl4,Enpp2,Qk,Plxnb3,Dpysl3

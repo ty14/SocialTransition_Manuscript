@@ -1,0 +1,31 @@
+Name	Description	pvalue	qvalue	phenotype	genes
+GO:0050890	cognition	2.74431474489801e-06	0.00419157967878633	-1	Igf1,Ppp1r1b,Mfsd2a,Cdk5,Cbr3,Fam107a,Chrna4,Arc,Cyp7b1
+GO:0001558	regulation of cell growth	2.03133211797063e-05	0.00844535678681094	-1	Igf1,Mfsd2a,Mt3,Cdkn1a,Cdk5,Fam107a,Ifrd1,Creb3,Rgs2
+GO:0070997	neuron death	9.51224567539767e-05	0.0122241934921152	-1	Mt1,Igf1,Mt3,Il18,Cdk5,Cdc34,Akt2,Atf4
+GO:0015980	energy derivation by oxidation of organic compounds	7.46615845748624e-05	0.0122241934921152	-1	Pygm,Ndufaf1,Igf1,Mt3,Ppp1r3g,Akt2,Gpd1
+GO:0051402	neuron apoptotic process	8.40816578584545e-05	0.0122241934921152	-1	Mt1,Mt3,Il18,Cdk5,Cdc34,Akt2,Atf4
+GO:1901214	regulation of neuron death	0.00030312553231999	0.0185404074883449	-1	Mt1,Igf1,Mt3,Il18,Cdk5,Cdc34,Atf4
+GO:0048638	regulation of developmental growth	0.00035267035541607	0.0192819627469505	-1	Igf1,Mfsd2a,Mt3,Cdkn1a,Cdk5,Ifrd1,Rgs2
+GO:0006091	generation of precursor metabolites and energy	0.0005717098037949	0.0203072441935474	-1	Pygm,Ndufaf1,Igf1,Mt3,Ppp1r3g,Akt2,Gpd1
+GO:1903829	positive regulation of protein localization	0.00114287956365594	0.0287196932314355	-1	Igf1,Cdk5,Mark4,Lamtor5,Mpc2,Akt2,Nadk
+GO:0043523	regulation of neuron apoptotic process	0.00033627790004154	0.0192819627469505	-1	Mt1,Mt3,Il18,Cdk5,Cdc34,Atf4
+GO:0043270	positive regulation of ion transport	0.00074216912915865	0.0236159518949388	-1	Cdk5,Akt2,Atf4,Arc,Creb3,Scn1b
+GO:0045861	negative regulation of proteolysis	0.00114700635614176	0.0287196932314355	-1	Igf1,Mt3,Ctla2a,Cdk5,Lamtor5,Akt2
+GO:1903532	positive regulation of secretion by cell	0.00123120269064559	0.0298492080890018	-1	Igf1,Pex5l,Cdk5,Mpc2,Nadk,Rasl10b
+GO:0051346	negative regulation of hydrolase activity	0.00128394606411283	0.0306415417603242	-1	Igf1,Ppp1r1b,Mt3,Lamtor5,Akt2,Rgs2
+GO:0062012	regulation of small molecule metabolic process	0.00137567757788365	0.031166130379782	-1	Igf1,Mfsd2a,Ppp1r3g,Akt2,Sec14l2,Gpd1
+GO:0031667	response to nutrient levels	0.00141374095891122	0.031166130379782	-1	Mfsd2a,Mt3,Cdkn1a,Fam107a,Atf4,Usf2
+GO:0009991	response to extracellular stimulus	0.00216562254687978	0.0355818442135068	-1	Mfsd2a,Mt3,Cdkn1a,Fam107a,Atf4,Usf2
+GO:0051047	positive regulation of secretion	0.00247346812709125	0.0381605768464584	-1	Igf1,Pex5l,Cdk5,Mpc2,Nadk,Rasl10b
+GO:0006112	energy reserve metabolic process	9.92653769645605e-06	0.00758074010397775	-1	Pygm,Igf1,Mt3,Ppp1r3g,Akt2
+GO:0048640	negative regulation of developmental growth	6.3979106302918e-05	0.0122241934921152	-1	Mt3,Cdkn1a,Cdk5,Ifrd1,Rgs2
+GO:0062013	positive regulation of small molecule metabolic process	0.00022924895115248	0.0175073804274869	-1	Igf1,Ppp1r3g,Akt2,Sec14l2,Gpd1
+GO:0016051	carbohydrate biosynthetic process	0.00049855802281628	0.0203072441935474	-1	Igf1,Ppp1r3g,Akt2,Atf4,Gpd1
+GO:0030308	negative regulation of cell growth	0.00055795646554295	0.0203072441935474	-1	Mt3,Cdkn1a,Cdk5,Ifrd1,Rgs2
+GO:0031669	cellular response to nutrient levels	0.00057044738276696	0.0203072441935474	-1	Mfsd2a,Cdkn1a,Fam107a,Atf4,Usf2
+GO:0006006	glucose metabolic process	0.00088454240945948	0.0259388182980724	-1	Igf1,Ppp1r3g,Akt2,Atf4,Gpd1
+GO:0031668	cellular response to extracellular stimulus	0.00109306404536847	0.0286358102526429	-1	Mfsd2a,Cdkn1a,Fam107a,Atf4,Usf2
+GO:0019318	hexose metabolic process	0.00156276609397894	0.031166130379782	-1	Igf1,Ppp1r3g,Akt2,Atf4,Gpd1
+GO:1901215	negative regulation of neuron death	0.001672138084816	0.0323467990940872	-1	Mt1,Igf1,Mt3,Cdk5,Atf4
+GO:0045444	fat cell differentiation	0.00175778436152224	0.0323467990940872	-1	Cebpd,Igf1,Dio2,Atat1,Rgs2
+GO:0045926	negative regulation of growth	0.00178703590684465	0.0324935977547819	-1	Mt3,Cdkn1a,Cdk5,Ifrd1,Rgs2

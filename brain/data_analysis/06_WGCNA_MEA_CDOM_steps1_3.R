@@ -86,11 +86,11 @@ dim(d0)
 rownames(d0) <- rownames(dlNorm)
 d0 <- calcNormFactors(d0)
 
-cutoff <- 5
+cutoff <- 20
 drop <- which(apply(cpm(d0), 1, max) < cutoff)
 dge.dl <- d0[-drop,]
 dim(dge.dl)
-#15184    40
+#10735   40
 
 # Now take out groups that you want
 #DOMs first 
@@ -125,16 +125,6 @@ design.dl <- model.matrix(~ 0 + group.dl)
 colnames(design.dl) -> mycolnames
 
 v.dl = voom(dge.dl, design.dl, plot = F)
-vfit.dl = lmFit(v.dl, design.dl)
-
-contr.matrix <- makeContrasts(group.dlCDOM-group.dlDOM,
-                              group.dlCDOM-group.dlDES, 
-                              group.dlDOM-group.dlDES,
-                              levels=design.dl)
-
-vfit.dl2 <- contrasts.fit(vfit.dl, contr.matrix)
-
-efit.dl2 = eBayes(vfit.dl2)
 
 
 # Many functions expect the matrix to be transposed
@@ -146,7 +136,7 @@ rownames(datExpr)
 
 # getting trait data
 colnames(coldata)
-amy <- coldata[c(3,5,6,11,12,16:18,20,21)]
+amy <- coldata[c(3,4,9:11,14:16,19)]
 
 ifelse(amy$condition1 == "CDOM", 1, amy$condition1) -> amy$condition2
 ifelse(amy$condition2 == "DOM", 0, amy$condition2) -> amy$condition2
@@ -160,11 +150,33 @@ amy1 <- amy %>%
   dplyr::select(-condition1)
 
 #make everything numeric 
-amy1[1:10] <- lapply(amy1[1:10], as.numeric)
+amy1[1:9] <- lapply(amy1[1:9], as.numeric)
+
+
+sampleTree = hclust(dist(datExpr), method = "average");
+# Plot the sample tree: Open a graphic output window of size 12 by 9 inches
+# The user should change the dimensions if the window is too large or too small.
+sizeGrWindow(12,9)
+
+par(cex = 0.6);
+par(mar = c(0,4,2,0))
+plot(sampleTree, main = "Sample clustering to detect outliers", sub="", xlab="", cex.lab = 1.5,
+     cex.axis = 1.5, cex.main = 2)
+
+# Plot a line to show the cut
+abline(h = 55, col = "red");
+# Determine cluster under the line
+clust = cutreeStatic(sampleTree, cutHeight = 55, minSize = 10)
+table(clust)
+# clust 1 contains the samples we want to keep.
+keepSamples = (clust==1)
+datExprx = datExpr[keepSamples, ]
+nGenes = ncol(datExprx)
+nSamples = nrow(datExprx)
 
 
 # Re-cluster samples with out any samples filtered 
-sampleTree2 = hclust(dist(datExpr), method = "average")
+sampleTree2 = hclust(dist(datExprx), method = "average")
 # Convert traits to a color representation: white means low, red means high, grey means missing entry
 traitColors = numbers2colors(amy1, signed = FALSE)
 # Plot the sample dendrogram and the colors underneath.
@@ -174,8 +186,8 @@ plotDendroAndColors(sampleTree2, traitColors,
 
 Samples = rownames(datExpr)
 collectGarbage()
-
-saveRDS(datExpr,"manuscript/brain/manuscript70/results/WGCNA/datExpr_MEA_CDOM.RDS")
+saveRDS(datExprx,"brain/results/WGCNA/datExpr_MEA_CDOM_outliersRemoved.RDS")
+saveRDS(datExpr,"brain/results/WGCNA/datExpr_MEA_CDOM.RDS")
 # ===========================================================================
 
 # Run WGCNA for each dom, descender, ascender, subordinate
@@ -183,7 +195,7 @@ saveRDS(datExpr,"manuscript/brain/manuscript70/results/WGCNA/datExpr_MEA_CDOM.RD
 # Choose a set of soft-thresholding powers
 powers = c(c(1:10), seq(from = 12, to=50, by=2))
 # Call the network topology analysis function
-sft = pickSoftThreshold(datExpr, powerVector = powers, verbose = 5, )
+sft = pickSoftThreshold(datExprx, powerVector = powers, verbose = 5, )
 # Plot the results:
 print(sft)
 sizeGrWindow(9, 5)
@@ -214,13 +226,13 @@ print(sft)
 # TOMType = "signed", networkType = "signed",
 # TOMType = "unsigned", networkType = "unsigned",
 # TOMType = c("signed", networkType = "signed hybrid")
-
+cor <- WGCNA::cor
 WGCNA_get_net <- function(my_tissue = "MEA70min",
-                          my_power =  9, 
+                          my_power =  6, 
                           my_TOMType ="signed", 
                           my_networkType = "signed hybrid"){
   
-  x <- readRDS("manuscript/brain/manuscript70/results/WGCNA/datExpr_MEA_CDOM.RDS") 
+  x <- readRDS("brain/results/WGCNA/datExpr_MEA_CDOM_outliersRemoved.RDS") 
   
   net = blockwiseModules(x, 
                          power = my_power,
@@ -235,16 +247,16 @@ WGCNA_get_net <- function(my_tissue = "MEA70min",
                          verbose = 3)
   
   
-  saveRDS(net, "manuscript/brain/manuscript70/results/WGCNA/net_MEA_CDOM_Power9.RDS")
+  saveRDS(net, "brain/results/WGCNA/net_MEA_CDOM_Power6_outliersRemoved.RDS")
   
 }
 
-# WGCNA_get_net("MEA70min", 6, "signed", "signed hybrid")
+# WGCNA_get_net("MEA70min", 8, "signed", "signed hybrid") #ugh probably go with 8???
 # WGCNA_get_net("MEA70min", 7, "signed", "signed hybrid")
-WGCNA_get_net("MEA70min", 9, "signed", "signed hybrid")
+WGCNA_get_net("MEA70min", 6, "signed", "signed hybrid")
 # ========================================================================================
 
-net <- readRDS(glue::glue("manuscript/brain/manuscript70/results/WGCNA/net_MEA_CDOM_Power9.RDS"))
+net <- readRDS(glue::glue("brain/results/WGCNA/net_MEA_CDOM_Power6_outliersRemoved.RDS"))
 
 # open a graphics window
 sizeGrWindow(12, 9)
@@ -254,13 +266,13 @@ mergedColors = labels2colors(net$colors)
 # Plot the dendrogram and the module colors underneath
 
 dev.off() # make sure you do this before AND after 
-png(file = "manuscript/brain/manuscript70/results/results_figures/cluster_dendo_MEA_CDOM_Power9.png",
+png(file = "brain/results/img/cluster_dendo_MEA_CDOM_Power6_outliersRemoved.png",
     width=600, height=350)
 plotDendroAndColors(net$dendrograms[[1]], mergedColors[net$blockGenes[[1]]],
                     "Module colors",
                     dendroLabels = FALSE, hang = 0.03,
                     addGuide = TRUE, guideHang = 0.05, 
-                    main = "MEA CDOM Power9")
+                    main = "MEA CDOM Power6")
 
 dev.off()
 
@@ -276,8 +288,8 @@ MEs = net$MEs
 ############ STEP 2
 
 
-datExpr <- readRDS("manuscript/brain/manuscript70/results/WGCNA/datExpr_MEA_CDOM.RDS") 
-net <- readRDS("manuscript/brain/manuscript70/results/WGCNA/net_MEA_CDOM_Power9.RDS")
+datExpr <- readRDS("brain/results/WGCNA/datExpr_MEA_CDOM_outliersRemoved.RDS") 
+net <- readRDS("brain/results/WGCNA/net_MEA_CDOM_Power8_outliersRemoved.RDS")
 dim(datExpr)
 moduleLabels = net$colors
 moduleColors = labels2colors(net$colors)
@@ -286,7 +298,35 @@ geneTree = net$dendrograms[[1]];
 
 moduleNumber = length(unique(moduleColors))
 rownames(datExpr)
-head(amy)
+
+
+# getting trait data
+coldata <- coldata %>% 
+  filter(SampleID != "B12.1.3") %>% 
+  filter(SampleID != "B11.4.4") %>% 
+  filter(SampleID != "B13.1.4")
+
+
+colnames(coldata)
+
+amy <- coldata[c(3,4,9:11,14:16,18,19)]
+
+ifelse(amy$condition1 == "CDOM", 1, amy$condition1) -> amy$condition2
+ifelse(amy$condition2 == "DOM", 0, amy$condition2) -> amy$condition2
+ifelse(amy$condition2 == "DES", -1, amy$condition2) -> amy$condition2
+
+
+amy1 <- amy %>% 
+  filter(condition1 != "ASC") %>%
+  filter(condition1 != "SUB") %>%
+  filter(condition1 != "CSUB") %>% 
+  dplyr::select(-condition1)
+
+#make everything numeric 
+amy1[1:10] <- lapply(amy1[1:10], as.numeric)
+
+
+head(amy1)
 
 # Re-cluster samples with out any samples filtered 
 sampleTree2 = hclust(dist(datExpr), method = "average")
@@ -295,7 +335,7 @@ traitColors = numbers2colors(amy1, signed = FALSE)
 # Plot the sample dendrogram and the colors underneath.
 plotDendroAndColors(sampleTree2, traitColors,
                     groupLabels = names(amy1),
-                    main = "AMY dendrogram and trait heatmap SUB:ASC")
+                    main = "AMY dendrogram and trait heatmap CDOM")
 
 datTraits <- amy1
 
@@ -316,7 +356,7 @@ MEs = orderMEs(MEs0)
 moduleTraitCor = cor(MEs, datTraits, use = "p");
 moduleTraitPvalue = corPvalueStudent(moduleTraitCor, nSamples);
 
-saveRDS(MEs,"manuscript/brain/manuscript70/results/wgcna/MEA_CDOM_MEs.RDS")
+saveRDS(MEs,"brain/results/WGCNA/MEA_CDOM_MEs_outliersRemoved.RDS")
 
 #=====================================================================================
 #
@@ -328,8 +368,8 @@ saveRDS(MEs,"manuscript/brain/manuscript70/results/wgcna/MEA_CDOM_MEs.RDS")
 
 dev.off() # make sure you do this before AND after
 
-png(file = "manuscript/brain/manuscript70/results/results_figures/module_trait_MEA_CDOM.png",
-    width=800, height=890, res = 130)
+png(file = "brain/results/img/module_trait_MEA_CDOM_outlierRemoved.png",
+    width=1000, height=1500, res = 130)
 
 # Will display correlations and their p-values
 textMatrix =  paste(signif(moduleTraitCor, 2), "\n(",
@@ -361,8 +401,8 @@ dev.off()
 
 
 ME_df <-MEs%>% data.frame() %>% 
-  tibble::rownames_to_column(var = "SampleName") %>%
-  pivot_longer(cols = 2:23, names_to = "Module") %>% 
+  tibble::rownames_to_column(var = "SampleID") %>%
+  pivot_longer(cols = 2:51, names_to = "Module") %>% 
   full_join(coldata)
 
 head(ME_df)
@@ -378,25 +418,10 @@ ME_df$Module <- gsub("ME", "", ME_df$Module)
 ME_df$status <- factor(ME_df$status, levels = c("CDOM", "DOM", "DES"))
 
 
-x <- ME_df %>% filter(Module == "salmon" )
-
-x <- ME_df %>% filter(Module == "greenyellow")
-
-x <- ME_df %>% filter(Module == "purple")
-
-x <-ME_df %>% filter(Module == "pink")
-
-
-x <-ME_df %>% filter(Module == "black")
-
-x <-ME_df %>% filter(Module == "brown")
-
-
 
 ME_df %>%
-  # gather(modules,value,2:(1+moduleNumber) ) %>%
   ggplot(aes(post_Ncort, value, color = status, fill = status))+
-  geom_point(size = 3, shape = 21, alpha = 0.3)+
+  geom_point(size = 2, shape = 21, alpha = 0.3)+
   geom_smooth(method = "lm", se =F, alpha = 0.2, size = 1.2)+
   scale_color_manual(values = viridis::viridis(3))+
   scale_fill_manual(values = viridis::viridis(3))+
@@ -406,38 +431,37 @@ ME_df %>%
        y = "Module eigengene") + theme_classic() -> p1
 p1
 
-ggsave(filename = "manuscript/brain/manuscript70/results/results_figures/MEA_eigengene_CORT_CDOM.png",
+ggsave(filename = "brain/results/img/MEA_eigengene_CORT_CDOM_outlierRemoved.png",
        p1,
-       height = 10, width = 10, dpi = 150)
+       height = 13, width = 15, dpi = 130)
 
 source("functions/geom_boxjitter.R")
 
-x %>%
+p2 <- ME_df %>%
   ggplot(aes(status, value, fill = status, color = status))+
   geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
                  alpha = 0.3,
                  jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
                  position = position_dodge(0.85)) +
-  scale_color_manual(values = c("#29AF7FFF", "#440154FF", "#2D708EFF"))+
-  scale_fill_manual(values = c("#29AF7FFF", "#440154FF", "#2D708EFF"))+
-  # facet_wrap(~Module, scales = "free_y")+
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
   labs(x = "Social status",
        y = "Module eigengene",
-       title = "MeA: Brown")+ theme_classic()+ theme(legend.position = "none")
+       title = "MeA: CDOM")+ theme_classic()+ theme(legend.position = "none")
 
 p2
 
-ggsave(filename = "manuscript/brain/manuscript70/results/results_figures/MEA_CDOM_eigengene_boxplot.png",
+ggsave(filename = "brain/results/img/MEA_CDOM_eigengene_boxplot_outliersRemoved.png",
        p2,
-       height = 16, width = 18, dpi = 100)
+       height = 15, width = 18, dpi = 130)
 
 
 
 ME_df %>%
-  # gather(modules,value,2:(1+moduleNumber) ) %>%
   ggplot(aes(AggRec70min, value, color = status, fill = status))+
-  geom_point(size = 3, shape = 21, alpha = 0.3)+
-  geom_smooth(method = "lm", alpha = 0.2, size = 1.2)+
+  geom_point(size = 2, shape = 21, alpha = 0.3)+
+  geom_smooth(method = "lm", se = F,  alpha = 0.2, size = 1.2)+
   scale_color_manual(values = viridis::viridis(3))+
   scale_fill_manual(values = viridis::viridis(3))+
   facet_wrap(~Module, scales = "free_y")+
@@ -513,30 +537,145 @@ wgcna_whole %>%
 wgcna_whole %>%
   left_join(geneTraitSignificance %>% rownames_to_column("ensgene")) -> wgcna_all
 
-saveRDS(wgcna_all, "manuscript/brain/manuscript70/results/wgcna/MEA_CDOM_WGCNA_MM_GS_all.RDS")
+saveRDS(wgcna_all, "brain/results/WGCNA/MEA_CDOM_WGCNA_MM_GS_all_outliersRemoved.RDS")
 
 
+
+
+#######################################
+# linear model
+datExpr <- readRDS("brain/results/WGCNA/datExpr_MEA_CDOM_outliersRemoved.RDS") 
+net <- readRDS("brain/results/WGCNA/net_MEA_CDOM_Power8_outliersRemoved.RDS")
+MEs <- readRDS("brain/results/WGCNA/MEA_CDOM_MEs_outliersRemoved.RDS")
+
+# Recalculate MEs with color labels
+MEs0 = moduleEigengenes(datExpr, moduleColors)$eigengenes
+
+
+
+
+colnames(coldata)
+coldata$condition1 <- factor(coldata$condition1, levels= c("CDOM", "DOM", "DES"))
+
+
+orderMEs(MEs0) %>% 
+  rownames_to_column("SampleID") %>%
+  left_join(coldata) %>% 
+  mutate(batch = as.factor(batch)) %>% 
+  mutate_if(is.numeric,scale) %>% 
+  mutate(conditionx = factor(condition1, levels = c("DOM", "CDOM", 'DES'))) %>% 
+  relocate(condition1,conditionx, batch, post_Ncort, Postds, Preds, AggGiven70min, AggRec70min ) %>% 
+  dplyr::select(-SampleID, -post_idbatch, -mean_con_ng_ul, -pre_idbatch, -pre_idbatchcage,
+                -time, -Prerank, -Postrank, -condition, -groupEX, -wt_d4, -wt_d8, -wt_12)-> ME_df
+
+lm_result_list <- list()
+
+library(lme4)
+library(lmerTest)
+# library(brms)
+# library(tidybayes)
+
+
+for(x in 1:length(MEs0)){
+  k = x + 8
+  ME_df[,c(1:8,k)] -> df
+  md <- gsub("ME","",colnames(df)[9])
+  colnames(df)[9] <- "module"
+  lmer(module ~ condition1 +(1|batch) , data = df) -> mod1
+  lmer(module ~ conditionx +(1|batch) , data = df) -> mod2
+  summary(mod1)
+  summary(mod2)
+  # brm(module ~ status +(1|cohort) , data = df) -> bmod1
+  # brm(module ~ statusx +(1|cohort) , data = df) -> bmod2
+  # # summary(bmod1)
+  # # plot(bmod1)
+  # bmod1 %>% 
+  #   gather_draws(b_statusSubdominant, b_statusSubordinate) %>% 
+  #   median_qi() -> sum1
+  # 
+  # bmod2 %>% 
+  #   gather_draws(b_statusxSubordinate) %>% 
+  #   median_qi() -> sum2
+  # 
+  # rbind(sum1, sum2) %>% 
+  #   as.data.frame() %>% 
+  #   cbind(key = c("Alpha-subdom","Alpha-Sub","Subdom-Sub")) %>% 
+  #   mutate(module = md) -> lm_result_list[[x]] 
+  
+  
+  df
+  rbind(summary(lm(df[,9] ~ df[,1]))$coefficients[2,],
+        summary(lm(df[,9] ~ df[,1]))$coefficients[3,],
+        summary(lm(df[,9] ~ df[,2]))$coefficients[3,])%>%
+    as.data.frame() %>%
+    cbind(key = c("CDOM-DOM","CDOM-DES","DOM-DES")) %>%
+    mutate(module = md) -> lm_result_list[[x]]
+}
+
+lm_result_list %>% 
+  do.call(rbind,.)%>% 
+  filter(.,module != "grey") -> lm_result_all
+
+
+saveRDS(lm_result_all,"brain/results/WGCNA/MEA_CDOM_lm_result_all_outliersRemoved.RDS")
+
+
+#module for cort 
+
+for(x in 1:length(MEs0)){
+  k = x + 8
+  ME_df[,c(1:8,k)] -> df
+  md <- gsub("ME","",colnames(df)[9])
+  colnames(df)[9] <- "module"
+  
+  lmer(module ~ post_Ncort +(1|batch) , data = df) -> mod1
+  
+  summary(mod1)
+
+  df
+  rbind(summary(lm(df[,9] ~ df[,1]))$coefficients[2,])%>%
+    as.data.frame() %>%
+    cbind(key = c("CORT")) %>%
+    mutate(module = md) -> lm_result_list[[x]]
+}
+
+lm_result_list %>% 
+  do.call(rbind,.)%>% 
+  filter(.,module != "grey") -> lm_result_all
+
+saveRDS(lm_result_all,"brain/results/WGCNA/MEA_CDOM_lm_result_all_outliersRemoved_CORT.RDS")
 
 #=====================================================================================
 #
 #  Code chunk 5
 #
 #=====================================================================================
+# Module of interest via significance 
+#DOM: lightsteelblue1, thriste2, blue, mediumpurple3, brown4, turquoise
+#DES: pink, greenyellow, red, yellow
+#CDOM: green
+#CORT: lightsteelblue1, thriste2, blue, mediumpurple3, brown4, turquoise,
+# black, sienna3, midnightblue, paleturquoise
+
+
 my_trait = "Status"
 module = "red"
-module = "lightcyan"
+module = "lightsteelblue1"
 module = "pink"
-module = "brown"
+module = "brown4"
 module = "green"
 module = "yellow"
 module = "greenyellow"
-module = "salmon"
+module = "thistle2"
 module = 'black'
-module = "purple"
-module = "magenta"
+module = "mediumpurple3"
+module = "paleturquoise"
 module = 'blue'
 module = "turquoise"
-module_list = c("red", "lightcyan", "pink","brown", "green","yellow", "greenyellow", 'salmon', "black", "purple", "blue", "magenta", "turquoise")
+module = 'sienna3'
+module = "midnightblue"
+module_list = c("red", "lightsteelblue1", "pink", "brown4", "green", "yellow", "greenyellow", "thistle2", "black", 
+                "mediumpurple3", "paleturquoise", "blue", "turquoise", "sienna3", "midnightblue")
 hub_gene_list = vector('list', length = length(module_list))
 names(hub_gene_list) <- module_list
 
@@ -605,7 +744,7 @@ hubgenes_df %>%
   dplyr::select(-ensgene, -chr) %>% 
   head(15)
 
-write.csv(hubgenes_df, "manuscript/brain/manuscript70/results/wgcna/wgcna_table/MEA_CDOM_hubgene_list.csv", row.names = F)
+write.csv(hubgenes_df, "brain/results/WGCNA/WGCNA_tables/MEA_CDOM_hubgene_list_outliersRemoved.csv", row.names = F)
 
 
 
@@ -626,8 +765,86 @@ xx <- cbind(ensgene = colnames(datExpr), module = moduleColors) %>%
 kIN_df %>% 
   left_join(xx) -> kIN_df
 
-saveRDS(kIN_df,"manuscript/brain/manuscript70/results/kIN/MEA_CDOM_kIN_dataframe_.RDS")
+saveRDS(kIN_df,"brain/results/WGCNA/kIN/MEA_CDOM_kIN_dataframe_outliersRemoved.RDS")
 
+####################################################
+# GO analysis for wgcna
+# run step 2 first! 
+
+# datExpr <- readRDS("manuscript/brain/manuscript70/results/wgcna/datExpr_MEA_CDOM.RDS") 
+# net <- readRDS("manuscript/brain/manuscript70/results/wgcna/net_MEA_CDOM_Power9.RDS")
+
+moduleLabels = net$colors
+moduleColors = labels2colors(net$colors)
+MEs = net$MEs;
+geneTree = net$dendrograms[[1]];
+
+moduleNumber = length(unique(moduleColors))
+
+modNames = substring(names(MEs), 3)
+
+
+## ==============================================
+gettop10GO_WGCNA <- function(module,my_showCategory = 10){
+  
+  column = match(module, modNames);
+  moduleGenes = moduleColors==module;
+  colnames(datExpr)[moduleColors==module] -> module_gene
+  
+  
+  grcm38 %>% 
+    filter(ensgene %in% module_gene) %>% 
+    filter(!is.na(entrez)) %>% 
+    dplyr::select(entrez) -> go_df_wgcna
+  
+  
+  ggo <- enrichGO(gene = go_df_wgcna$entrez %>% unique(),
+                  OrgDb = org.Mm.eg.db::org.Mm.eg.db,
+                  keyType = "ENTREZID",
+                  ont = 'BP',
+                  readable = T,
+                  pAdjustMethod = "BH",
+                  pvalueCutoff  = 0.05,
+                  qvalueCutoff  = 0.50)
+  
+  
+  fortify(
+    ggo,
+    showCategory = my_showCategory,
+    by = "Count",
+    split = NULL,
+    includeAll = TRUE
+  ) %>% 
+    dplyr::arrange(desc(GeneRatio)) %>% 
+    mutate(module = module) -> temp1
+  
+  return(rbind(temp1))
+  
+}
+
+my_ont = "BP"
+my_showCategory = 100
+
+
+module_list %>% unique() -> allcolors
+
+WGCNA_GOs <- vector('list', length(allcolors))
+
+for(i in 1:length(allcolors)){
+  gettop10GO_WGCNA(allcolors[i],my_showCategory) -> WGCNA_GOs[[i]]
+}
+
+WGCNA_GOs %>% 
+  do.call(rbind,.) -> wgcna_all_gos
+
+write.csv(wgcna_all_gos, 
+          "brain/results/wgcna/wgcna_tables/CDOM_MEA_wgcna_all_gos_catogeryBP_outliersRemoved.csv",
+          row.names = F)
+
+# saveRDS(wgcna_all_gos,"manuscript/brain/manuscript/results/wgcna/CDOM_MEA_wgcna_all_gos.RDS")
+
+
+#COME BACK LATER TO DO THE REST OF THIS IF NEEDED
 
 
 
@@ -681,82 +898,6 @@ TOMplot(dissim = 1-dissTOM^7,
         min = "Network heatmap plot, removed unassigned genes")
 dev.off()
 
-#######################################
-# linear model
-datExpr <- readRDS("manuscript/brain/manuscript70/results/wgcna/datExpr_MEA_CDOM.RDS") 
-net <- readRDS("manuscript/brain/manuscript70/results/wgcna/net_MEA_CDOM_Power9.RDS")
-MEs <- readRDS("manuscript/brain/manuscript70/results/wgcna/MEA_CDOM_MEs.RDS")
-
-# Recalculate MEs with color labels
-MEs0 = moduleEigengenes(datExpr, moduleColors)$eigengenes
-
-
-
-
-colnames(coldata)
-coldata$condition1 <- factor(coldata$condition1, levels= c("CDOM", "DOM", "DES"))
-
-
-orderMEs(MEs0) %>% 
-  rownames_to_column("SampleName") %>%
-   left_join(coldata) %>% 
-              mutate(batch = as.factor(batch)) %>% 
-              mutate_if(is.numeric,scale) %>% 
-  mutate(conditionx = factor(condition1, levels = c("DOM", "CDOM", 'DES'))) %>% 
-  relocate(condition1,conditionx, batch, post_Ncort, Postds, Preds, AggGiven70min, AggRec70min ) %>% 
-    dplyr::select(-SampleName,-region, -post_idbatch, -mean_con_ng_ul, -pre_idbatch, -pre_idbatchcage,
-           -time, -Prerank, -Postrank, -condition, -groupEX, -wt_d4, -wt_d8, -wt_12)-> ME_df
-
-lm_result_list <- list()
-
-library(lme4)
-library(lmerTest)
-# library(brms)
-# library(tidybayes)
-
-
-for(x in 1:length(MEs0)){
-  k = x + 8
-  ME_df[,c(1:8,k)] -> df
-  md <- gsub("ME","",colnames(df)[9])
-  colnames(df)[9] <- "module"
-  lmer(module ~ condition1 +(1|batch) , data = df) -> mod1
-  lmer(module ~ conditionx +(1|batch) , data = df) -> mod2
-  summary(mod1)
-  summary(mod2)
-  # brm(module ~ status +(1|cohort) , data = df) -> bmod1
-  # brm(module ~ statusx +(1|cohort) , data = df) -> bmod2
-  # # summary(bmod1)
-  # # plot(bmod1)
-  # bmod1 %>% 
-  #   gather_draws(b_statusSubdominant, b_statusSubordinate) %>% 
-  #   median_qi() -> sum1
-  # 
-  # bmod2 %>% 
-  #   gather_draws(b_statusxSubordinate) %>% 
-  #   median_qi() -> sum2
-  # 
-  # rbind(sum1, sum2) %>% 
-  #   as.data.frame() %>% 
-  #   cbind(key = c("Alpha-subdom","Alpha-Sub","Subdom-Sub")) %>% 
-  #   mutate(module = md) -> lm_result_list[[x]] 
-  
-
-df
-  rbind(summary(lm(df[,9] ~ df[,1]))$coefficients[2,],
-        summary(lm(df[,9] ~ df[,1]))$coefficients[3,],
-        summary(lm(df[,9] ~ df[,2]))$coefficients[3,])%>%
-    as.data.frame() %>%
-    cbind(key = c("CDOM-DOM","CDOM_DES","DOM-DES")) %>%
-    mutate(module = md) -> lm_result_list[[x]]
-}
-
-lm_result_list %>% 
-do.call(rbind,.)%>% 
- filter(.,module != "grey") -> lm_result_all
-
-
-saveRDS(lm_result_all,"manuscript/brain/manuscript70/results/RDS/MEA_CDOM_lm_result_all.RDS")
 
 
 
@@ -881,98 +1022,6 @@ temp_p
 
 ggsave(filename = "manuscript/brain/manuscript70/results/results_figures/modulesize_MEA_CDOM.png",temp_p,
        width = 30, height = 14.5, units = "cm", dpi = 150)
-
-
-####################################################
-# GO analysis for wgcna
-# run step 2 first! 
-
-datExpr <- readRDS("manuscript/brain/manuscript70/results/wgcna/datExpr_MEA_CDOM.RDS") 
-net <- readRDS("manuscript/brain/manuscript70/results/wgcna/net_MEA_CDOM_Power9.RDS")
-
-moduleLabels = net$colors
-moduleColors = labels2colors(net$colors)
-MEs = net$MEs;
-geneTree = net$dendrograms[[1]];
-
-moduleNumber = length(unique(moduleColors))
-
-modNames = substring(names(MEs), 3)
-
-module = "red"
-module = "lightcyan"
-module = "pink"
-module = "brown"
-module = "green"
-module = "yellow"
-module = "greenyellow"
-module = "salmon"
-module_list = c("red", "lightcyan", "pink","brown", "green","yellow", "greenyellow", 'salmon')
-## ==============================================
-gettop10GO_WGCNA <- function(module,my_showCategory = 10){
-  
-  column = match(module, modNames);
-  moduleGenes = moduleColors==module;
-  colnames(datExpr)[moduleColors==module] -> module_gene
-  
-  
-  grcm38 %>% 
-    filter(ensgene %in% module_gene) %>% 
-    filter(!is.na(entrez)) %>% 
-    dplyr::select(entrez) -> go_df_wgcna
-  
-  
-  ggo <- enrichGO(gene = go_df_wgcna$entrez %>% unique(),
-                  OrgDb = org.Mm.eg.db::org.Mm.eg.db,
-                  keyType = "ENTREZID",
-                  ont = 'BP',
-                  readable = T,
-                  pAdjustMethod = "BH",
-                  pvalueCutoff  = 0.05,
-                  qvalueCutoff  = 0.50)
-  
-  
-  fortify(
-    ggo,
-    showCategory = my_showCategory,
-    by = "Count",
-    split = NULL,
-    includeAll = TRUE
-  ) %>% 
-    dplyr::arrange(desc(GeneRatio)) %>% 
-    mutate(module = module) -> temp1
-  
-  return(rbind(temp1))
-  
-}
-
-my_ont = "BP"
-my_showCategory = 100
-
-
-
-WGCNA_GOs <- vector('list', length(allcolors))
-
-moduleColors %>% unique() -> allcolors
-
-for(i in 1:length(allcolors)){
-  gettop10GO_WGCNA(allcolors[i],my_showCategory) -> WGCNA_GOs[[i]]
-}
-
-WGCNA_GOs %>% 
-  do.call(rbind,.) -> wgcna_all_gos
-
-write.csv(wgcna_all_gos, 
-          "manuscript/brain/manuscript70/results/wgcna/wgcna_table/CDOM_MEA_wgcna_all_gos_catogeryBP.csv",
-          row.names = F)
-
-saveRDS(wgcna_all_gos,"manuscript/brain/manuscript/results/wgcna/CDOM_MEA_wgcna_all_gos.RDS")
-
-
-#COME BACK LATER TO DO THE REST OF THIS IF NEEDED
-
-
-
 
 
 

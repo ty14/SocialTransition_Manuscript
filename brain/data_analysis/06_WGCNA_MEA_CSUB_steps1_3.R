@@ -291,7 +291,7 @@ MEs = net$MEs
 
 
 datExpr <- readRDS("brain/results/WGCNA/datExpr_MEA_CSUB_outliersRemoved.RDS") 
-net <- readRDS("brain/results/WGCNA/net_MEA_CSUB_Power9_outliersRemoved.RDS")
+net <- readRDS("brain/results/WGCNA/net_MEA_CSUB_Power8_outliersRemoved.RDS")
 dim(datExpr)
 moduleLabels = net$colors
 moduleColors = labels2colors(net$colors)
@@ -402,7 +402,7 @@ dev.off()
 
 ME_df <-MEs%>% data.frame() %>% 
   tibble::rownames_to_column(var = "SampleID") %>%
-  pivot_longer(cols = 2:19, names_to = "Module") %>% 
+  pivot_longer(cols = 2:21, names_to = "Module") %>% 
   full_join(coldata)
 
 head(ME_df)
@@ -545,7 +545,7 @@ saveRDS(wgcna_all, "brain/results/WGCNA/MEA_CSUB_WGCNA_MM_GS_all_outliersRemoved
 #######################################
 # linear model
 datExpr <- readRDS("brain/results/WGCNA/datExpr_MEA_CSUB_outliersRemoved.RDS") 
-net <- readRDS("brain/results/WGCNA/net_MEA_CSUB_Power9_outliersRemoved.RDS")
+net <- readRDS("brain/results/WGCNA/net_MEA_CSUB_Power8_outliersRemoved.RDS")
 MEs <- readRDS("brain/results/WGCNA/MEA_CSUB_MEs_outliersRemoved.RDS")
 
 # Recalculate MEs with color labels
@@ -651,25 +651,18 @@ saveRDS(lm_result_all,"brain/results/WGCNA/MEA_CSUB_lm_result_all_outliersRemove
 #
 #=====================================================================================
 # Module of interest via significance 
-#DOM: lightsteelblue1, thriste2, blue, mediumpurple3, brown4, turquoise
-#DES: pink, greenyellow, red, yellow
-#CDOM: green
-#CORT: lightsteelblue1, thriste2, blue, mediumpurple3, brown4, turquoise,
-# black, sienna3, midnightblue, paleturquoise
+#SUB: red, purple
+#ASC: none
+#CSUB: cyan
+#CORT: cyan, purple, royalblue, red
 
 
 my_trait = "Status"
 module = "red"
-module = "greenyellow"
-module = "lightgreen"
-module = 'black'
-module = "brown"
-module = 'blue'
-module = "lightcyan"
-module = 'yellow'
-module = "tan"
-module_list = c("red", "brown", "yellow", "greenyellow", "black", 
-                "lightgreen", "blue", "lightcyan", "tan" )
+module = "purple"
+module = "cyan"
+module = 'royalblue'
+module_list = c("red", "purple", "cyan", "royalblue" )
 hub_gene_list = vector('list', length = length(module_list))
 names(hub_gene_list) <- module_list
 

@@ -17,7 +17,7 @@ grcm38 # mouse genes
 
 my_logFC_threshold = 0.2
 
-limma_list<- readRDS("brain/results/RDS/limma_MEA_CDOM.RDS") %>% 
+limma_list<- readRDS("brain/results/RDS/limma_mPFC_CDOM.RDS") %>% 
   map(~distinct(.)) %>% 
   map(~filter(.,abs(logFC) >= my_logFC_threshold)) %>%
   map(~filter(.,P.Value <0.05)) %>% 
@@ -91,8 +91,8 @@ up_dis <- up_cdom %>% mutate(reg = "Up")
 cdom_gene <- up_cdom %>% full_join(down_cdom)
 
 
-#up dis is 93, down decenders is 103
-#up dis is 96, down decenders is 94
+#up dis is 93, down dis is 103 #mea
+#up dis is 96, down dis is 94 #mpfc
 dis <- up_dis %>% full_join(down_dis)
 
 #save

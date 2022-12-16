@@ -465,7 +465,7 @@ p1x
 
 ggsave(filename = "brain/results/img/MEA_eigengene_CORT_CSUB_SIGN.png",
        p1x,
-       height = 5, width = 8, dpi = 130)
+       height = 2.5, width = 6, dpi = 130)
 
 
 source("functions/geom_boxjitter.R")
@@ -522,11 +522,11 @@ p2xx <- CSUB %>%
   facet_wrap(~Module, scales = "free_y")+
   labs(x = "Social status",
        y = "Module eigengene",
-       title = "MeA: SUB")+ theme_classic()+ theme(legend.position = "none")
+       title = "MeA: CSUB")+ theme_classic()+ theme(legend.position = "none")
 
 p2xx
 ggsave(filename = "brain/results/img/MEA_CSUB_eigengene_boxplot_SIGN.png",
-       p2x,
+       p2xx,
        height = 2.5, width = 2.5, dpi = 130)
 
 

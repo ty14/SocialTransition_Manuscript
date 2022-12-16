@@ -136,7 +136,7 @@ y2a <- read_csv("brain/results/tables/distruption_MEA_genes.csv")
 y2b <- read_csv("brain/results/tables/distruption_mPFC_genes.csv")
 
 
-gettop10GO(y1a, my_showCategory) %>% 
+gettop10GO(y2a, my_showCategory) %>% 
   mutate(comparison = "DOM DIS - MEA") -> top10go1
 
 gettop10GO(y2b, my_showCategory ) %>% 
@@ -164,7 +164,7 @@ y2a <- read_csv("brain/results/tables/distruptionSUB_MEA_genes.csv")
 y2b <- read_csv("brain/results/tables/distruptionSUB_mPFC_genes.csv")
 
 
-gettop10GO(y1a, my_showCategory) %>% 
+gettop10GO(y2a, my_showCategory) %>% 
   mutate(comparison = "SUB DIS - MEA") -> top10go1
 
 gettop10GO(y2b, my_showCategory ) %>% 

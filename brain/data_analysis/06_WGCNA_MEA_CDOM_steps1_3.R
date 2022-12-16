@@ -481,7 +481,7 @@ p1x
 
 ggsave(filename = "brain/results/img/MEA_eigengene_CORT_CDOM_SIGN.png",
        p1x,
-       height = 10, width = 10, dpi = 130)
+       height = 5, width = 10, dpi = 130)
 
 source("functions/geom_boxjitter.R")
 

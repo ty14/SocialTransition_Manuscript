@@ -395,6 +395,10 @@ dev.off()
 #  Code chunk - Won's code to look at regression 
 #
 #=====================================================================================
+#CSUB: darkturquoise, lightcyan, violet, orange
+#SUB: lightgreen, tan
+#ASC: turquoise
+#CORT: orange, lightcyan, lightgreen, darkturquoise
 
 
 ME_df <-MEs%>% data.frame() %>% 
@@ -413,6 +417,21 @@ ME_df <- ME_df %>%
 ME_df$Module <- gsub("ME", "", ME_df$Module)
 
 ME_df$status <- factor(ME_df$status, levels = c("CSUB", "SUB", "ASC"))
+SUB1 <- ME_df %>% filter(Module == "lightgreen")
+SUB2 <- ME_df %>% filter(Module == "tan")
+
+SUB <- SUB1 %>% rbind(SUB2)
+
+CSUB1 <- ME_df %>% filter(Module == "lightcyan")
+CSUB2 <- ME_df %>% filter(Module == "darkturquoise")
+CSUB3 <- ME_df %>% filter(Module == "violet")
+CSUB4 <- ME_df %>% filter(Module == "orange")
+
+CSUB <- CSUB1 %>% rbind(CSUB2, CSUB3, CSUB4)
+
+ASC <- ME_df %>% filter(Module == "turquoise")
+
+CORT <- CSUB4 %>% rbind(CSUB1, SUB1, CSUB2)
 
 
 
@@ -431,6 +450,22 @@ p1
 ggsave(filename = "brain/results/img/mPFC_eigengene_CORT_CSUB.png",
        p1,
        height = 10, width = 10, dpi = 130)
+
+CORT %>%
+  ggplot(aes(post_Ncort, value, color = status, fill = status))+
+  geom_point(size = 2, shape = 21, alpha = 0.3)+
+  geom_smooth(method = "lm", se =F, alpha = 0.2, size = 1.2)+
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  theme(legend.position = "top")+
+  labs(x = "CORT 70 min after reorganization",
+       y = "Module eigengene") + theme_classic() -> p1x
+p1x
+
+ggsave(filename = "brain/results/img/mPFC_eigengene_CORT_CSUB_SIGN.png",
+       p1x,
+       height = 5, width = 5, dpi = 130)
 
 source("functions/geom_boxjitter.R")
 
@@ -452,6 +487,66 @@ p2
 ggsave(filename = "brain/results/img/mPFC_CSUB_eigengene_boxplot.png",
        p2,
        height = 15, width = 15, dpi = 130)
+
+
+p2x <- CSUB %>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "mPFC: CSUB")+ theme_classic()+ theme(legend.position = "none")
+
+p2x
+
+ggsave(filename = "brain/results/img/mPFC_CSUB_eigengene_boxplot_SIGN.png",
+       p2x,
+       height = 5, width = 5, dpi = 130)
+
+
+
+p2xx <- ASC%>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "mPFC: ASC")+ theme_classic()+ theme(legend.position = "none")
+
+p2xx
+
+ggsave(filename = "brain/results/img/mPFC_ASC_eigengene_boxplot_SIGN.png",
+       p2xx,
+       height = 2.5, width = 2.5, dpi = 130)
+
+p2xxx <- SUB%>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "mPFC: SUB")+ theme_classic()+ theme(legend.position = "none")
+
+p2xxx
+
+ggsave(filename = "brain/results/img/mPFC_SUB_eigengene_boxplot_SIGN.png",
+       p2xxx,
+       height = 3, width = 5, dpi = 130)
 
 
 

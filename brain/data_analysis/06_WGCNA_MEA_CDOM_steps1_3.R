@@ -398,6 +398,11 @@ dev.off()
 #  Code chunk - Won's code to look at regression 
 #
 #=====================================================================================
+#DOM: lightsteelblue1, thriste2, blue, mediumpurple3, brown4, turquoise
+#DES: pink, greenyellow, red, yellow
+#CDOM: green
+#CORT: lightsteelblue1, thriste2, blue, mediumpurple3, brown4, turquoise,
+# black, sienna3, midnightblue, paleturquoise
 
 
 ME_df <-MEs%>% data.frame() %>% 
@@ -418,6 +423,32 @@ ME_df$Module <- gsub("ME", "", ME_df$Module)
 ME_df$status <- factor(ME_df$status, levels = c("CDOM", "DOM", "DES"))
 
 
+DOM1 <- ME_df %>% filter(Module == "lightsteelblue1")
+DOM2 <- ME_df %>% filter(Module == "thistle2")
+DOM3 <- ME_df %>% filter(Module == "blue")
+DOM4 <- ME_df %>% filter(Module == "brown4")
+DOM5 <- ME_df %>% filter(Module == "turquoise")
+DOM6 <- ME_df %>% filter(Module == "mediumpurple3")
+
+DOM <- DOM1 %>% rbind(DOM2, DOM3, DOM4, DOM5, DOM6)
+
+DES1 <- ME_df %>% filter(Module == "pink")
+DES2 <- ME_df %>% filter(Module == "greenyellow")
+DES3 <- ME_df %>% filter(Module == "red")
+DES4 <- ME_df %>% filter(Module == "yellow")
+
+DES <- DES1 %>% rbind(DES2, DES3, DES4)
+
+CDOM <- ME_df %>% filter(Module == "green")
+
+
+CORT1 <- ME_df %>% filter(Module == "black")
+CORT2 <- ME_df %>% filter(Module == "sienna3")
+CORT3 <- ME_df %>% filter(Module == "midnightblue")
+CORT4 <- ME_df %>% filter(Module == "paleturquoise")
+
+CORT <- DOM1 %>% rbind(DOM2, DOM3, DOM4, DOM5, DOM6, CORT1, CORT2, CORT3,CORT4)
+
 
 ME_df %>%
   ggplot(aes(post_Ncort, value, color = status, fill = status))+
@@ -434,6 +465,23 @@ p1
 ggsave(filename = "brain/results/img/MEA_eigengene_CORT_CDOM_outlierRemoved.png",
        p1,
        height = 13, width = 15, dpi = 130)
+
+
+CORT %>%
+  ggplot(aes(post_Ncort, value, color = status, fill = status))+
+  geom_point(size = 2, shape = 21, alpha = 0.3)+
+  geom_smooth(method = "lm", se =F, alpha = 0.2, size = 1.2)+
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y", ncol =5)+
+  theme(legend.position = "top")+
+  labs(x = "CORT 70 min after reorganization",
+       y = "Module eigengene") + theme_classic() -> p1x
+p1x
+
+ggsave(filename = "brain/results/img/MEA_eigengene_CORT_CDOM_SIGN.png",
+       p1x,
+       height = 10, width = 10, dpi = 130)
 
 source("functions/geom_boxjitter.R")
 
@@ -455,6 +503,68 @@ p2
 ggsave(filename = "brain/results/img/MEA_CDOM_eigengene_boxplot_outliersRemoved.png",
        p2,
        height = 15, width = 18, dpi = 130)
+
+
+
+
+p2x <- DOM %>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "MeA: DOM")+ theme_classic()+ theme(legend.position = "none")
+
+p2x
+
+ggsave(filename = "brain/results/img/MEA_DOM_eigengene_boxplot_SIGN.png",
+       p2x,
+       height = 5, width = 8, dpi = 130)
+
+
+p2xx <- DES %>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "MeA: DES")+ theme_classic()+ theme(legend.position = "none")
+
+p2xx
+
+ggsave(filename = "brain/results/img/MEA_DES_eigengene_boxplot_SIGN.png",
+       p2xx,
+       height = 5, width = 5, dpi = 130)
+
+
+p2xxx <- CDOM %>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "MeA: CDOM")+ theme_classic()+ theme(legend.position = "none")
+
+p2xxx
+
+ggsave(filename = "brain/results/img/MEA_CDOM_eigengene_boxplot_SIGN.png",
+       p2xxx,
+       height = 2.5, width = 2.5, dpi = 130)
 
 
 

@@ -398,6 +398,11 @@ dev.off()
 #  Code chunk - Won's code to look at regression 
 #
 #=====================================================================================
+# Module of interest via significance 
+#SUB: red, purple
+#ASC: none
+#CSUB: cyan
+#CORT: cyan, purple, royalblue, red
 
 
 ME_df <-MEs%>% data.frame() %>% 
@@ -417,6 +422,17 @@ ME_df$Module <- gsub("ME", "", ME_df$Module)
 
 ME_df$status <- factor(ME_df$status, levels = c("CSUB", "SUB", "ASC"))
 
+SUB1 <- ME_df %>% filter(Module == "red")
+SUB2 <- ME_df %>% filter(Module == "purple")
+
+SUB <- SUB1 %>% rbind(SUB2)
+
+
+CSUB <- ME_df %>% filter(Module == "cyan")
+
+CORT1 <- ME_df %>% filter(Module == "royalblue")
+
+CORT <- SUB1 %>% rbind(SUB2, CORT1)
 
 
 ME_df %>%
@@ -434,6 +450,23 @@ p1
 ggsave(filename = "brain/results/img/MEA_eigengene_CORT_CSUB_outlierRemoved.png",
        p1,
        height = 10, width = 10, dpi = 130)
+
+CORT %>%
+  ggplot(aes(post_Ncort, value, color = status, fill = status))+
+  geom_point(size = 2, shape = 21, alpha = 0.3)+
+  geom_smooth(method = "lm", se =F, alpha = 0.2, size = 1.2)+
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  theme(legend.position = "top")+
+  labs(x = "CORT 70 min after reorganization",
+       y = "Module eigengene") + theme_classic() -> p1x
+p1x
+
+ggsave(filename = "brain/results/img/MEA_eigengene_CORT_CSUB_SIGN.png",
+       p1x,
+       height = 5, width = 8, dpi = 130)
+
 
 source("functions/geom_boxjitter.R")
 
@@ -455,6 +488,48 @@ p2
 ggsave(filename = "brain/results/img/MEA_CSUB_eigengene_boxplot_outliersRemoved.png",
        p2,
        height = 15, width = 15, dpi = 130)
+
+
+
+p2x <- SUB %>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "MeA: SUB")+ theme_classic()+ theme(legend.position = "none")
+
+p2x
+
+ggsave(filename = "brain/results/img/MEA_SUB_eigengene_boxplot_SIGN.png",
+       p2x,
+       height = 3.5, width = 6.5, dpi = 130)
+
+
+p2xx <- CSUB %>%
+  ggplot(aes(status, value, fill = status, color = status))+
+  geom_boxjitter(outlier.color = NA, jitter.shape = 21, jitter.color = NA,
+                 alpha = 0.3,
+                 jitter.height = 0.02, jitter.width = 0.07, errorbar.draw = TRUE,
+                 position = position_dodge(0.85)) +
+  scale_color_manual(values = viridis::viridis(3))+
+  scale_fill_manual(values = viridis::viridis(3))+
+  facet_wrap(~Module, scales = "free_y")+
+  labs(x = "Social status",
+       y = "Module eigengene",
+       title = "MeA: SUB")+ theme_classic()+ theme(legend.position = "none")
+
+p2xx
+ggsave(filename = "brain/results/img/MEA_CSUB_eigengene_boxplot_SIGN.png",
+       p2x,
+       height = 2.5, width = 2.5, dpi = 130)
+
+
 
 
 

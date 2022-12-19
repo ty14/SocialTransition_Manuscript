@@ -401,6 +401,7 @@ saveRDS(limma_list,"brain/results/RDS/limma_MEA_DOM_CORT.RDS")
         
         saveRDS(limma_list,"brain/results/RDS/limma_mPFC_DOM_CORT.RDS")
         
+        limma_list <-  readRDS("brain/results/RDS/limma_MEA_DOM_CORT.RDS")
         
         #quick look at number of genes
         limma_list %>% map(~filter(., P.Value<0.05)) %>% 

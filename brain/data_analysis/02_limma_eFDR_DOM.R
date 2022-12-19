@@ -194,6 +194,8 @@ sum(duplicated(row.names(efit.dl2$coefficients)))
 
 saveRDS(q.dl,("brain/results/RDS/limma_vdl_cutoff5_2000_tworand_MEA_CDOM.RDS"))
 
+
+q.dl <- readRDS("brain/results/RDS/limma_vdl_cutoff5_2000_tworand_MEA_CDOM.RDS")
 efit.dl2[["p.value"]] <- q.dl
 row.names(q.dl) <- NULL
 sum(duplicated(row.names(efit.dl2$coefficients)))
@@ -245,6 +247,9 @@ saveRDS(limma_list,"brain/results/RDS/limma_MEA_CDOM.RDS")
         cdom <- limma_list$cdom
         cdes <- limma_list$cdes 
         domdes <- limma_list$domdes 
+        
+        domdes %>% arrange(logFC) %>% head(.,10)
+        
         
  ##########################################################################################       
         
@@ -483,3 +488,7 @@ saveRDS(limma_list,"brain/results/RDS/limma_MEA_CDOM.RDS")
         cdom <- limma_list$cdom
         cdes <- limma_list$cdes 
         domdes <- limma_list$domdes
+        
+        
+        domdes %>% arrange(logFC) %>% head(.,10)
+        

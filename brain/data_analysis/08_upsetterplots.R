@@ -290,13 +290,46 @@ des_down$symbol[des_down$symbol %in% sub_up$symbol]   # "Lrrc75b"
 #aggressive genes?
 sa_down$symbol[sa_down$symbol %in% dd_up$symbol]
 #"Alpl"   "Mvk"    "Dazap1" 
-
 sa_down$symbol[sa_down$symbol %in% cdom_up$symbol]
 # "Egfl6"   "Ankrd37" "Tprn"    "Tspan12" "Tmem144" "Krcc1"   "Arxes1"  "Rpl36a"  "Egfl7" 
 
-#social defeat?
-sa_up$symbol[sa_up$symbol %in% dd_down$symbol]
-#"Disc1" "Pbld1" "Car12"
+
+# control genes
+cs_down$symbol[cs_down$symbol %in% cdom_down$symbol]
+# [1] "Ovol2"         "Casp6"         "Ptgfrn"        "Egr3"          "Egr1"          "Lcorl"         "Lcorl"         "Pitpnm3"      
+# [9] "Tbc1d30"       "Hcfc2"         "Pter"          "Zcchc2"        "Dph7"          "9930104L06Rik" "Stx1a"         "1810055G02Rik"
+# [17] "D630045J12Rik" "Raph1"         "Dhx38"         "Hivep3"        "Lrrfip1"       "Sdccag8"       "Gabbr2"
+
+ca_up$symbol[ca_up$symbol %in% cdom_up$symbol]
+# "Sox13"   "Csrp1"   "Vps25"   "Vmn2r27" "Fads6"   "Kcnmb1"  "Slc6a11" "Rps6ka1" "Rpp40"   "Tmtc4"   "Hepacam"
+
+ca_down$symbol[ca_down$symbol %in% dd_up$symbol]
+
+
+
+#transition
+ca_down$symbol[ca_down$symbol %in% cdes_down$symbol]
+# "Thg1l"         "Acss2"         "Exoc6"         "Tspan14"       "Mtmr2"         "Twf2"          "1810055G02Rik" "Lin7b"        
+# "Ppp1r15b"      "Plekhm1"       "Ndfip2"        "Vps26a"        "Sprn"          "Dynll1"        "Atl2"         
+# >
+
+ca_up$symbol[ca_up$symbol %in% cdes_up$symbol]
+# Sox13"  "Entpd2" "Gjc1"   "Patj"   "Dhx16"  "Dhtkd1" "Mynn"   "Tmtc4" 
+
+
+#defeat
+ca_up$symbol[ca_up$symbol %in% cdes_down$symbol]
+# [1] "Serpina3i" "Runx1"     "Sult1a1"   "Oaf"       "Slc15a2"   "Nudt13"    "Fam189b"   "Dnajb12"  
+
+ca_down$symbol[ca_down$symbol %in% dd_up$symbol]
+cs_up$symbol[cs_up$symbol %in% cdes_down$symbol]
+# "Lrp8"    "Bag4"    "Dek"     "Pcgf5"   "B3galt1" "Map6"
 
 sa_up$symbol[sa_up$symbol %in% cdes_down$symbol]
-# "Sult1a1" "Car12"  
+# "Sult1a1" "Car12" 
+
+
+cs_up$symbol[cs_up$symbol %in% dd_down$symbol]
+# Ndst4"   "Ccl12"   "Penk"    "Irag1"   "Adra2a"  "Wfdc18"  "Mylk"    "Olfml2b" "Clmp"    "Ggta1"   "Brinp3"  "Klhl13"  "Aldh1a1"
+# [14] "Aldh1a1" "Igfbp7"  "Slc2a5"  "Tspan12" "Alcam"   "Rpp21"   "Skap2"   "Card19"  "Foxq1"   "Arl15"   "Ppp1r2"  "S100a16" "Sdc4"   
+# [27] "Hsdl2"   "Fkbp5"   "Cnot11"  "Stn1"    "Ublcp1"  "Pcmtd1"  "Rogdi" 

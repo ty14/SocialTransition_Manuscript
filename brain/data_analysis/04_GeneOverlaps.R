@@ -107,7 +107,7 @@ dis$symbol[(dis$symbol %in% des$symbol)]
 
 my_logFC_threshold = 0.2
 
-limma_list<- readRDS("brain/results/RDS/limma_MeA_CSUB.RDS") %>% 
+limma_list<- readRDS("brain/results/RDS/limma_mPFC_CSUB.RDS") %>% 
   map(~distinct(.)) %>% 
   map(~filter(.,abs(logFC) >= my_logFC_threshold)) %>%
   map(~filter(.,P.Value <0.05)) %>% 
@@ -123,6 +123,20 @@ casc$reg <- ifelse(casc$logFC >= 0.2, "up", "down")
 
 subasc <- limma_list$subasc 
 subasc$reg <- ifelse(subasc$logFC >= 0.2, "up", "down")
+
+
+downcs <- csub %>% arrange(logFC) %>% head(.,10)
+upcs <- csub %>% arrange(-logFC) %>% head(.,10)
+
+
+downca <- casc%>% arrange(logFC) %>% head(.,10)
+upca <- casc %>% arrange(-logFC) %>% head(.,10)
+
+downsa <- subasc %>% arrange(logFC) %>% head(.,10)
+upsa <- subasc %>% arrange(-logFC) %>% head(.,10)
+
+
+
 
 #looking for asc upregulated genes: 
 cdd <- casc %>% filter(reg == "down")

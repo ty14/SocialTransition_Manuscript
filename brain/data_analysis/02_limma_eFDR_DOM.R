@@ -267,7 +267,7 @@ saveRDS(limma_list,"brain/results/RDS/limma_MEA_CDOM.RDS")
         str(coldata)
         
         coldata <- coldata %>% 
-          filter(SampleName != "B1.PFCB12.3.4.trim.sam.counts") 
+          filter(post_idbatch != "3-4Batch12") 
         
         #fixing things
         coldata$region <- gsub("mPF", "PFC", coldata$region)
@@ -327,7 +327,7 @@ saveRDS(limma_list,"brain/results/RDS/limma_MEA_CDOM.RDS")
         drop <- which(apply(cpm(d0), 1, max) < cutoff)
         dge.dl <- d0[-drop,]
         dim(dge.dl)
-        # 15112   40
+        # 14991    39
         
         # Now take out groups that you want
         #DOMs first 
@@ -378,7 +378,7 @@ saveRDS(limma_list,"brain/results/RDS/limma_MEA_CDOM.RDS")
         
         saveRDS(v.dl, "brain/results/RDS/limma_vdl_mPFC_CDOM.RDS")
         
-        
+      
         
         # How many random sampling
         R = 5000
@@ -490,5 +490,5 @@ saveRDS(limma_list,"brain/results/RDS/limma_MEA_CDOM.RDS")
         domdes <- limma_list$domdes
         
         
-        domdes %>% arrange(logFC) %>% head(.,10)
+        cdom %>% arrange(-logFC) %>% head(.,10)
         

@@ -17,7 +17,7 @@ grcm38 # mouse genes
 
 my_logFC_threshold = 0.2
 
-limma_list<- readRDS("brain/results/RDS/limma_MEA_CDOM.RDS") %>% 
+limma_list<- readRDS("brain/results/RDS/limma_mPFC_CDOM.RDS") %>% 
   map(~distinct(.)) %>% 
   map(~filter(.,abs(logFC) >= my_logFC_threshold)) %>%
   map(~filter(.,P.Value <0.05)) %>% 
@@ -63,7 +63,7 @@ des <- up_des %>% full_join(down_des)
 # write.csv(des, 'brain/results/tables/descender_mPFC_genes.csv' ,row.names = F)
 
 
-############ 
+###########
 
 ## looking for genes different from CDOM  
 

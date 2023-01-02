@@ -92,7 +92,7 @@ listInput <- list(CDOM_up= cdom_up$symbol, CDES_up=cdes_up$symbol, DOMDES_up = d
                   CS_down= cs_down$symbol, CA_down=ca_down$symbol, SA_down = sa_down$symbol)
 
 
-upset(fromList(listInput), nsets = 12, order.by = "freq", keep.order = F)
+uupset(fromList(listInput), nsets = 12, order.by = "freq", keep.order = F)
 
 wrap_label <- function(x) str_wrap(str_replace_all(x, "_", " "), width = 20)
 
@@ -228,7 +228,7 @@ listInput <- list(CDOM= cdom$symbol, CDES=cdes$symbol, DOMDES = domdes$symbol,
                   CSUB = cs$symbol, CASC = ca$symbol, SUBASC = sa$symbol)
 
 
-upset(fromList(listInput), nsets = 6, order.by = "freq", keep.order = F)
+UpSetR::upset(fromList(listInput), nsets = 6, order.by = "freq", keep.order = F)
 
 #just doms 
 DEGx <- cdom %>% rbind(cdes, domdes)
@@ -239,7 +239,7 @@ listInput <- list(CDOM_up= cdom_up$symbol, CDES_up=cdes_up$symbol, DOMDES_up = d
                   CS_down= cs_down$symbol, CA_down=ca_down$symbol, SA_down = sa_down$symbol)
 
 
-upset(fromList(listInput), nsets = 12, order.by = "freq", keep.order = F)
+UpSetR::upset(fromList(listInput), nsets = 12, nintersect = NA,  order.by = "freq", keep.order = F)
 
 wrap_label <- function(x) str_wrap(str_replace_all(x, "_", " "), width = 20)
 
@@ -280,56 +280,67 @@ list_input <- list("ASC up-regulated" = asc_up$symbol,
 data <- fromList(list_input)
 data
 
- upset(data,nsets = 8, order.by = "freq", keep.order = F)
+ UpSetR::upset(data,nsets = 8, order.by = "freq", keep.order = F)
 
 sub_up$symbol[sub_up$symbol %in% dom_up$symbol]       # "1810055G02Rik"
 dom_down$symbol[dom_down$symbol %in% asc_up$symbol]   # "Egfl6"
-des_down$symbol[des_down$symbol %in% sub_up$symbol]   # "Lrrc75b"
+
 
 
 #aggressive genes?
 sa_down$symbol[sa_down$symbol %in% dd_up$symbol]
-#"Alpl"   "Mvk"    "Dazap1" 
+# "Alpl"    "Mvk"     "Ampd2"   "Dazap1"  "Tspan33" 
 sa_down$symbol[sa_down$symbol %in% cdom_up$symbol]
-# "Egfl6"   "Ankrd37" "Tprn"    "Tspan12" "Tmem144" "Krcc1"   "Arxes1"  "Rpl36a"  "Egfl7" 
-
-
-# control genes
-cs_down$symbol[cs_down$symbol %in% cdom_down$symbol]
-# [1] "Ovol2"         "Casp6"         "Ptgfrn"        "Egr3"          "Egr1"          "Lcorl"         "Lcorl"         "Pitpnm3"      
-# [9] "Tbc1d30"       "Hcfc2"         "Pter"          "Zcchc2"        "Dph7"          "9930104L06Rik" "Stx1a"         "1810055G02Rik"
-# [17] "D630045J12Rik" "Raph1"         "Dhx38"         "Hivep3"        "Lrrfip1"       "Sdccag8"       "Gabbr2"
-
-ca_up$symbol[ca_up$symbol %in% cdom_up$symbol]
-# "Sox13"   "Csrp1"   "Vps25"   "Vmn2r27" "Fads6"   "Kcnmb1"  "Slc6a11" "Rps6ka1" "Rpp40"   "Tmtc4"   "Hepacam"
-
+# "Egfl6"   "Ankrd37" "Tprn"    "Tspan12"   "Rpl36a"  "Snupn'
 ca_down$symbol[ca_down$symbol %in% dd_up$symbol]
-
-
-
-#transition
-ca_down$symbol[ca_down$symbol %in% cdes_down$symbol]
-# "Thg1l"         "Acss2"         "Exoc6"         "Tspan14"       "Mtmr2"         "Twf2"          "1810055G02Rik" "Lin7b"        
-# "Ppp1r15b"      "Plekhm1"       "Ndfip2"        "Vps26a"        "Sprn"          "Dynll1"        "Atl2"         
-# >
-
-ca_up$symbol[ca_up$symbol %in% cdes_up$symbol]
-# Sox13"  "Entpd2" "Gjc1"   "Patj"   "Dhx16"  "Dhtkd1" "Mynn"   "Tmtc4" 
-
+# "Ovol2"   "Ephb6"   "Zfp760"  "Gm14267" "Necab1"  "Lcorl"   "Lcorl"   "Sccpdh"  "Pitpnm3" "Lrrc75b" "Spindoc"
+# "Plxna3""Wdsub1"  "Pcdh10"  "Nubpl"  
+ca_down$symbol[ca_down$symbol %in% cdom_up$symbol]
+# "Olfr905" "Egfl6"   "Polr1f" 
 
 #defeat
-ca_up$symbol[ca_up$symbol %in% cdes_down$symbol]
-# [1] "Serpina3i" "Runx1"     "Sult1a1"   "Oaf"       "Slc15a2"   "Nudt13"    "Fam189b"   "Dnajb12"  
-
-ca_down$symbol[ca_down$symbol %in% dd_up$symbol]
-cs_up$symbol[cs_up$symbol %in% cdes_down$symbol]
-# "Lrp8"    "Bag4"    "Dek"     "Pcgf5"   "B3galt1" "Map6"
-
-sa_up$symbol[sa_up$symbol %in% cdes_down$symbol]
-# "Sult1a1" "Car12" 
-
-
 cs_up$symbol[cs_up$symbol %in% dd_down$symbol]
-# Ndst4"   "Ccl12"   "Penk"    "Irag1"   "Adra2a"  "Wfdc18"  "Mylk"    "Olfml2b" "Clmp"    "Ggta1"   "Brinp3"  "Klhl13"  "Aldh1a1"
-# [14] "Aldh1a1" "Igfbp7"  "Slc2a5"  "Tspan12" "Alcam"   "Rpp21"   "Skap2"   "Card19"  "Foxq1"   "Arl15"   "Ppp1r2"  "S100a16" "Sdc4"   
-# [27] "Hsdl2"   "Fkbp5"   "Cnot11"  "Stn1"    "Ublcp1"  "Pcmtd1"  "Rogdi" 
+# [1] "Arhgap36" "Ccl12"    "Penk"     "Irag1"    "Adra2a"   "Wfdc18"   "Mylk"     "Olfml2b"  "Clmp"     "Ggta1"   
+# [11] "Brinp3"   "Klhl13"   "Aldh1a1"  "Aldh1a1"  "Igfbp7"   "Slc2a5"   "Tafa2"    "Saa2"     "Lmo7"     "Alcam"   
+# [21] "Plpp6"    "Rpp21"    "Skap2"    "Card19"   "Foxq1"    "Arl15"    "Ppp1r2"   "S100a16"  "Sdc4"     "Hsdl2"   
+# [31] "Fkbp5"    "Stn1"     "Lrrtm4"   "Ublcp1"   "Odc1"     "Endod1"   "Pcmtd1"   "Rogdi" 
+cs_down$symbol[cs_down$symbol %in% dd_down$symbol]
+# [1] "Alg9"  "Gstz1"
+ca_up$symbol[ca_up$symbol %in% cdes_down$symbol]
+# [1] "Serpina3i" "Cdc14a"    "Pnoc"      "Slc15a2"   "Dnajb12" 
+cs_up$symbol[cs_up$symbol %in% cdes_down$symbol]
+# [1] "Serpina3i" "Wfdc18"    "Olfml2b"   "Ggta1"     "Brinp3"    "Cdc14a"    "Lats2"     "Saa2"      "Ntsr2"     "Ecm1"     
+# [11] "Card19"    "Pnoc"      "Sdc4"      "Gpr37l1"   "Rpf2"      "Tmeff1"    "Ciao3"     "Lix1l"     "Nsmf"
+cs_down$symbol[cs_down$symbol %in% cdes_down$symbol]
+# [1] "Nsun5"         "Cetn4"         "Dph7"          "Alg9"          "1810055G02Rik" "Gstz1"     
+sa_up$symbol[sa_up$symbol %in% cdes_down$symbol]
+ "Car12" 
+ 
+ 
+ # control genes
+ cs_down$symbol[cs_down$symbol %in% cdom_down$symbol]
+ # [1] "Ptgfrn"        "Lcorl"         "Lcorl"         "Pitpnm3"       "Zcchc2"        "Dph7"          "1810055G02Rik"
+ # [8] "D630045J12Rik" "Dhx38"         "Hivep3"        "Anks1"         "Atg16l2"       "Sdccag8"       "Ercc1
+ 
+ cs_up$symbol[cs_up$symbol %in% cdom_up$symbol]
+ # "Abca9"   "Csrp1"   "Tspan12" "Entpd2"  "Pou3f4"  "Slc4a4"  "Nhs"     "Pak4"    "Sox2"    "Hadhb"  
+ 
+ ca_up$symbol[ca_up$symbol %in% cdom_up$symbol]
+ # "Sox13"   "Csrp1"   "Bhmt"    "Entpd2"  "Pou3f4"  "Kcnmb1"  "Rp2"     "Ppfibp1"
+ 
+ ca_down$symbol[ca_down$symbol %in% cdom_down$symbol]
+ # [1] "Ptgfrn"        "Lcorl"         "Lcorl"         "Dph7"          "Osgepl1"       "Pitpnm3"       "Tceal1"       
+ # [8] "Acss2"         "Twf2"          "1810055G02Rik" "Nubpl"         "Ercc1"         "Plekhm1"       "Atl2" 
+ 
+ 
+ #transition
+ ca_down$symbol[ca_down$symbol %in% cdes_down$symbol]
+ # [1] "Thg1l"         "Dph7"          "Osgepl1"       "Acss2"         "Exoc6"         "Mtmr2"         "1810055G02Rik"
+ # [8] "Ppp1r15b"      "Plekhm1"       "Ndfip2"        "Atl2" 
+ ca_up$symbol[ca_up$symbol %in% cdes_up$symbol]
+ # Sox13"  "Entpd2" "Gjc1"  "Dhx16"  "Dhtkd1" "Mynn"   "Tmtc4
+ sa_down$symbol[ca_down$symbol %in% dd_down$symbol]
+ # [1] "Myadml2" "Aifm2"   "Dpm3"    "Tusc1"   "Fastkd5" "Slc29a3" "Srsf9"   "Cdo1"    "Selenof"
+ sa_up$symbol[ca_up$symbol %in% dd_up$symbol]
+ # "Treml2" "Rilpl1" "Magi3"
+

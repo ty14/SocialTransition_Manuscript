@@ -255,3 +255,32 @@ limma_list %>% map(~filter(., P.Value<0.05)) %>%
 
 limma_list %>% map(~hist(.$logFC))
 
+
+cc <- limma_list$cdomcsub
+cc %>% arrange(-logFC) %>% head(., 20)
+cc %>% arrange(logFC) %>% head(., 20)
+
+ds <- limma_list$domsub
+ds %>% arrange(-logFC) %>% head(., 20)
+ds %>% arrange(logFC) %>% head(., 20)
+
+csd <- limma_list$csubdom
+csd %>% arrange(-logFC) %>% head(., 20)
+csd %>% arrange(logFC) %>% head(., 20)
+
+cdoms <- limma_list$cdomsub
+cdoms %>% arrange(-logFC) %>% head(., 20)
+cdoms %>% arrange(logFC) %>% head(., 20)
+
+#AcH genes
+chol <- c('Chrm2', 'Chrm4','Gnai1','Gnai2','Chrm1','Chrm3','Chrm5','Gna11', 'Gna14','Gnaq','Ache',
+          'Chat','Grk2', 'Grk5', 'Rgs2', 'Rgs4', 'Rgs6', 'Slc18a3', 'Slc5a7', 'Nat1', 'Lhx8', 'Slc10a4', 
+          'Gbx1','Chrna2', 'Chrna3', 'Chrna6', 'Chrna7', 'Chrnb4', 'Chrnb3', 'Agrn', 'Chrna1', 'Chrna10', 
+          'Chrna4', 'Chrna5', 'Chrna9', 'Chrnb1', 'Chrnb2', 'Chrnd', 'Chrne', 'Chrng', 'Dok7', 'Lrp4', 'Musk',
+          'Rapsn')
+
+cc[cc$symbol %in% chol,]
+ds[ds$symbol %in% chol,] #chrm3 (-)
+csd[csd$symbol %in% chol,]
+cdoms[cdoms$symbol %in% chol,] #chrnb4, chrm2(-), Rgs4(-)
+
